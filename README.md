@@ -1,1 +1,2 @@
-- Set up AllAuth
+- style index.html
+- add navigation
