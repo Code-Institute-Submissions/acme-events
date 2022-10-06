@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}
+
+ /* ====== Custom Colors ======  */
+:root {
+    --accent-color1: #FFC105;
+    --accent-color2: #0F0B00;
+  }
+
+.text-black {
+    color: #000000;
+}
+
+.text-color1 {
+    color: var(--accent-color1);
+}
+
+.bg-color1 {
+    background-color: var(--accent-color1);
+}
+
+.bg-color2 {
+background-color: var(--accent-color2);
+}
+
+ /* ====== Navigation ======  */
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 193, 5, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#navbarToggler.scrolled.navbar-toggler {
+    background-color: var(--accent-black);
+}
+
+ /* ====== Hero Section ======  */
+
+#hero > a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#hero {
+    height: 100vh;
+    width: 100%;
+    background: url("../../media/acme-events-anvil.png") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+h1 > span {
+    font-size: 2em;
+    color: var(--accent-color1);
+}
+
+ /* ====== Footer ======  */
+
+footer {
+    background-color: var(--accent-color2);
+}
+
+
+
