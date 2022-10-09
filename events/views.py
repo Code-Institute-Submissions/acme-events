@@ -8,8 +8,3 @@ from .models import Event
 class EventList(ListView):
     model = Event
     template_name = "events/event-list.html"
-
-
-class EventDetail(DetailView):
-    model = Event
-    template_name = "events/event-detail.html"

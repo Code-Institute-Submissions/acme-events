@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    color: #ffffff;
 }
 
  /* ====== Custom Colors ======  */
@@ -12,6 +11,10 @@
 
 .text-black {
     color: #000000;
+}
+
+.text-white {
+    color: #FFFFFF;
 }
 
 .text-color1 {
@@ -37,6 +40,10 @@ background-color: var(--accent-color2);
     background-color: var(--accent-black);
 }
 
+#navLinks > ul > li > i {
+    color: red;
+}
+
  /* ====== Hero Section ======  */
 
 #hero > a {
@@ -52,7 +59,26 @@ background-color: var(--accent-color2);
     position: relative;
   }
 
-h1 > span {
+#brand, .page-title {
+    color: #ffffff;
+}
+
+#brand > span {
+    font-size: 2em;
+    color: var(--accent-color1);
+}
+
+ /* ====== Page-specific Headers ======  */
+
+.page-header {
+    height: 20vh;
+    width: 100%;
+    background: url("../../media/acme-events-anvil.png") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .page-title > span {
     font-size: 2em;
     color: var(--accent-color1);
 }

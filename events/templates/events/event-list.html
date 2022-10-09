@@ -1,5 +1,32 @@
 {% extends "base.html" %}
 
+{% block pageheader %}
+<!-- ====== Page-specific Header ====== -->
+<section class="page-header d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-lg-8">
+          <h1 class="page-title">Events<span>.</span></h1>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- ====== END Page Header ====== -->
+
+{% endblock %}
+
 {% block content %}
-event list
+
+{% for event in event_list %}
+
+<div class="card">
+    <img class="card-img-top" src="{{ featured_image }}" alt="{{ event.name }} image">
+    <div class="card-body">
+      <h5 class="card-title">{{ event.name }}</h5>
+      <p class="card-text">{{ event.short_description }}</p>
+      <a href="#" class="btn btn-primary">More info</a>
+    </div>
+  </div>
+{% endfor %}
+
 {% endblock %}
