@@ -83,25 +83,28 @@
 
     {% block content %}
     {% endblock %}
+    
 <!-- ====== Footer ====== -->
     <footer>
-        <section id="footer" class="d-flex pt-4 pb-4">
+        <section id="footer" class="pt-4 pb-4">
 
             <div class="container justify-content-center align-items-center">
                 <div class="row text-center">
+                    <div class="col-12">
 
-                    <h2 class="text-color1 col-10 offset-1">Subscribe</h2>
+                        <h2 class="text-color1 col-10 offset-1">Subscribe</h2>
 
-                    <form action="#" method="" class="col-10 offset-1">
-                        {% csrf_token %}
-                        <input type="text" class="text-black col-sm-10 col-md-5" placeholder="First Name">
-                        <input type="email" class="text-black col-sm-10 col-md-5" placeholder="Email Address">
-                        <button id="subscribe-button" class="btn text-black bg-color1 py-1">Sign Up
-                            <span class="icon"><i class="fas fa-envelope text-black"></i></span>
-                        </button>
-                    </form>
+                        <form action="#" method="" class="col-10 offset-1">
+                            {% csrf_token %}
+                            <input type="text" class="text-black col-sm-10 col-md-5" placeholder="First Name">
+                            <input type="email" class="text-black col-sm-10 col-md-5" placeholder="Email Address">
+                            <button id="subscribe-button" class="btn text-black bg-color1 py-1">Sign Up
+                                <span class="icon"><i class="fas fa-envelope text-black"></i></span>
+                            </button>
+                        </form>
 
-                    <p class="text-center text-white col-10 offset-1 pt-4 mb-1">All Rights Reserved &copy; 2022</p>
+                        <p class="text-center text-white col-10 offset-1 pt-4 mb-1">All Rights Reserved &copy; 2022</p>
+                    </div>
                 </div>
 
             </div>
