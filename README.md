@@ -1,5 +1,5 @@
-- style index.html
-- add navigation
+- improve navigation styling
+- continue to develop event-list page
 
 
 
