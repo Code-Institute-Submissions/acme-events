@@ -4,6 +4,7 @@ from django.db import models
 class Location(models.Model):
     """ Locations for events """
     venue_name = models.CharField(max_length=250)
+    venue_image = models.ImageField(blank=True, null=True)
     street_address1 = models.CharField(max_length=150)
     street_address2 = models.CharField(max_length=150, blank=True, null=True)
     city_or_town = models.CharField(max_length=150)
@@ -28,7 +29,7 @@ class Event(models.Model):
     location = models.ForeignKey(
         Location, on_delete=models.CASCADE, related_name="events"
     )
-    featured_image = models.ImageField()
+    featured_image = models.ImageField(blank=True, null=True)
     short_description = models.TextField(blank=True, null=True)
     long_description = models.TextField()
     start_date = models.DateField()
@@ -36,6 +37,7 @@ class Event(models.Model):
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
     published = models.BooleanField(default=False)
+    capacity = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         """ Standard string method returning name field """

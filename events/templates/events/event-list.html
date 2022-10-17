@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block pageheader %}
 <!-- ====== Page-specific Header ====== -->
@@ -20,7 +21,7 @@
 {% for event in event_list %}
 
 <div class="card">
-    <img class="card-img-top" src="{{ featured_image }}" alt="{{ event.name }} image">
+    <img class="card-img-top" src="{{ event.featured_image.url }}" alt="{{ event.name }} image">
     <div class="card-body">
       <h5 class="card-title">{{ event.name }}</h5>
       <p class="card-text">{{ event.short_description }}</p>
