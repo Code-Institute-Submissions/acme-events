@@ -83,6 +83,11 @@ background-color: var(--accent-color2);
     color: var(--accent-color1);
 }
 
+ /* ====== Headings ======  */
+h3 {
+    font-size: 1.2rem;
+}
+
  /* ====== Footer ======  */
 
 footer {

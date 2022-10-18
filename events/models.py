@@ -42,6 +42,7 @@ class Event(models.Model):
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
     published = models.BooleanField(default=False)
     capacity = models.IntegerField(blank=True, null=True)
+    price = models.IntegerField()
 
     def __str__(self):
         """ Standard string method returning name field """
