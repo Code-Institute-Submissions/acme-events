@@ -12,13 +12,14 @@ class LocationAdmin(admin.ModelAdmin):
 
 
 class EventAdmin(admin.ModelAdmin):
-    readonly_fields = ('slug',)
 
     list_display = (
         'name', 'location', 'start_date', 'start_time', 'published')
 
     ordering = ('start_date',)
 
+    prepopulated_fields = {"slug": ("name",)}
 
-admin.site.register(Event)
+
+admin.site.register(Event, EventAdmin)
 admin.site.register(Location)

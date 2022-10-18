@@ -26,7 +26,7 @@ class Event(models.Model):
     Model for Event objects. Will later be connected to Booking objects
     """
     name = models.CharField(max_length=254)
-    slug = models.SlugField(max_length=254, unique=True)
+    slug = models.SlugField()
     location = models.ForeignKey(
         Location, on_delete=models.CASCADE, related_name="events"
     )
@@ -46,3 +46,6 @@ class Event(models.Model):
     def __str__(self):
         """ Standard string method returning name field """
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("event_detail", kwargs={"slug": self.slug})

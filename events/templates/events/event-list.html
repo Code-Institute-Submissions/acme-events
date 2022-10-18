@@ -22,6 +22,12 @@
       <div class="row mt-4">
 
         {% for event in event_list %}
+        <hr class="col-12">
+        <h5 class="col-12">{{ event.start_date }} @ {{ event.start_time }} - {{ event.end_time }}</h5>
+        <h4 class="col-11 offset-1"><a href="{% url 'event_detail' slug=event.slug %}">{{ event.name }}</a></h4>
+        <h5 class="col-11 offset-1">{{ event.location.venue_name }}<span>, {{ event.location.street_address1 }}</span></h5>
+        <p class="d-block">{{ event.short_description }}</p>
+
         <div class="card col-12 col-md-4 col-lg-3">
             <img class="card-img-top" src="{{ event.featured_image.url }}" alt="{{ event.name }} image">
             <div class="card-body">
