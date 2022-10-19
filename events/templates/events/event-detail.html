@@ -1,6 +1,44 @@
 {% extends "base.html" %}
 
+{% block pageheader %}
+<!-- ====== Page-specific Header ====== -->
+<section class="page-header">
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="row">
+        <div>
+          <h1 class="page-title">Details<span>.</span></h1>
+        </div>
+      </div>
+    </div>
+  </section><!-- ====== END Page Header ====== -->
+{% endblock %}
+
 {% block content %}
-event detail
-{{ event.name }}
+<div class="container">
+    <div class="row my-4">
+        <!-- Desktop Abbreviated Date Display -->
+        <div class="d-none d-md-flex col-md-1">
+          <span class="font-weight-bold">{{ event.start_date|date:"D"|upper }} </span>
+          {{ event.start_date|date:"j" }}
+        </div>
+        <!-- All Screens: Event Info -->
+        <div class="col-12 col-md-11 d-block d-md-flex">
+          <!-- All Screens: Event Featured Image -->
+          <div class="col-12 col-md-4 order-1 order-md-2">
+            <img class=col-12 src="{{ event.featured_image.url }}" alt="{{ event.name }} image">
+          </div>
+          <!-- All Screens: Event Details -->
+          <div class="col-12 col-md-8 order-2 order-md-1">
+            <h3 class="col-12">{{ event.start_date }} @ {{ event.start_time }} - {{ event.end_time }}</h3>
+            <h2 class="col-12"><a href="{% url 'event_detail' slug=event.slug %}">{{ event.name }}</a></h2>
+            <h3 class="col-12">{{ event.location.venue_name }}<span>, {{ event.location.street_address1 }}</span></h3>
+            <div class="pl-3">
+              <p class="d-block">{{ event.short_description }}</p>
+              <p class="d-block font-weight-bold">€{{ event.price }}</p>
+            </div>
+          </div><!-- End of Event Details -->
+        </div><!-- End of Event Info -->
+
+    </div>
+  </div>
 {% endblock %}

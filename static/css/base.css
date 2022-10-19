@@ -72,7 +72,8 @@ background-color: var(--accent-color2);
 
 .page-header {
     height: 20vh;
-    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
     background: url("../../media/acme-events-anvil.png") top center;
     background-size: cover;
     position: relative;
@@ -95,3 +96,13 @@ footer {
     display: block;
     clear: both;
 }
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    margin:auto;
+    width: 95%;               
+    background-color: var(--accent-color1);
+    height: 1px;
+  }

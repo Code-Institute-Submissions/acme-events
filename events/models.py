@@ -32,7 +32,7 @@ class Event(models.Model):
     )
     featured_image = models.ImageField(
         blank=True, null=True,
-        upload_to='event_images', default='placeholder_anvil_9KRsiCg.jpeg'
+        upload_to='event_images', default='placeholder_anvil_9KRsiCg'
     )
     short_description = models.TextField()
     long_description = models.TextField()

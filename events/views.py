@@ -9,7 +9,8 @@ current_date = timezone.localdate()
 
 
 class EventList(ListView):
-    queryset = Event.objects.filter(start_date__gte=current_date, published=True)
+    queryset = Event.objects.filter(
+        start_date__gte=current_date, published=True)
     template_name = "events/event-list.html"
 
 
