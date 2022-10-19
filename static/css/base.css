@@ -21,6 +21,13 @@
     color: var(--accent-color1);
 }
 
+.emphatic-text {
+    color: #636060;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -.05rem;
+}
+
 .bg-color1 {
     background-color: var(--accent-color1);
 }
@@ -97,6 +104,8 @@ footer {
     clear: both;
 }
 
+ /* ====== EventList & EventDetails ======  */
+
 hr {
     border: 0;
     clear:both;
@@ -106,3 +115,9 @@ hr {
     background-color: var(--accent-color1);
     height: 1px;
   }
+
+#venue-table {
+    border-top: 2px solid var(--accent-color1);
+}
+
+ /* ====== New Section ======  */
