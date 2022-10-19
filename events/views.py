@@ -5,8 +5,11 @@ from django.utils import timezone
 from .models import Event
 
 
+current_date = timezone.localdate()
+
+
 class EventList(ListView):
-    model = Event
+    queryset = Event.objects.filter(start_date__gte=current_date, published=True)
     template_name = "events/event-list.html"
 
 
