@@ -136,12 +136,16 @@ hr {
 
  /* ====== Media Queries ======  */
 
- @media (max-width: 769px) {
+ @media (max-width: 768px) {
     .navbar-collapse{
         background-color: #343a40;
     }
 
     .nav-link {
         border: .25px groove var(--accent-color1);
+    }
+
+    footer input {
+        margin-bottom: .5rem;
     }
   }
