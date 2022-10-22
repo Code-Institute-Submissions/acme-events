@@ -43,12 +43,17 @@ background-color: var(--accent-color2);
 "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 193, 5, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-#navbarToggler.scrolled.navbar-toggler {
-    background-color: var(--accent-black);
+.nav-item {
+    padding-right: 5px;
 }
 
-#navLinks > ul > li > i {
-    color: red;
+a.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color1);
+}
+
+.scrolled {
+    background-color: #343a40;
 }
 
  /* ====== Hero Section ======  */
@@ -120,4 +125,14 @@ hr {
     border-top: 2px solid var(--accent-color1);
 }
 
- /* ====== New Section ======  */
+ /* ====== Media Queries ======  */
+
+ @media (max-width: 769px) {
+    .navbar-collapse{
+        background-color: #343a40;
+    }
+
+    .nav-link {
+        border: .25px groove var(--accent-color1);
+    }
+  }

@@ -59,19 +59,19 @@
                 <div class="collapse navbar-collapse" id="navLinks">
                     <ul class="navbar-nav ml-auto text-right">
                         {% if template_name != 'index' %}
-                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-3 m-0 px-md-1">Home</a></li>
                         {% endif %}
-                        <li class="nav-item"><a href="{% url 'event_list' %}" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="{% url 'event_list' %}" class="nav-link px-3 m-0 px-md-1">Events</a></li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item"><a href="#" class="nav-link"><i
+                        <li class="nav-item"><a href="#" class="nav-link px-3 m-0 px-md-1"><i
                                     class="fas fa-cog d-inline"></i> Settings</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><i
+                        <li class="nav-item"><a href="#" class="nav-link px-3 m-0 px-md-1"><i
                                     class="fas fa-user d-inline"></i> My Tickets</a></li>
-                        <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link"><i
+                        <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link px-3 m-0 px-md-1"><i
                                     class="fas fa-sign-out-alt d-inline"></i> Sign Out</a></li>
                         {% else %}
-                        <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link">Create Account</a></li>
-                        <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link">Log In</a></li>
+                        <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link px-3 m-0 px-md-1">Create Account</a></li>
+                        <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link px-3 m-0 px-md-1">Log In</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -114,11 +114,12 @@
     {% endblock %}
 
     <script>
+        // Apply background color to nav when scrolled below page-header for ease of reading.
         $(function () {
         $(document).scroll(function(){
-            let $nav = $("#mainNav");
-            let $navbarToggler = $("#navbarToggler");
-            $navbarToggler.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            let $navItem = $(".nav-item");
+            let $pageHeader = $(".page-header");
+            $navItem.toggleClass("scrolled", $(this).scrollTop() > $pageHeader.height());
         });
         });
     </script>
