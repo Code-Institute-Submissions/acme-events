@@ -20,8 +20,8 @@
       <div class="col">
         <!-- if bookings condition -->
         <div class="table-responsive rounded">
-          <table class="table table-sm table-borderless">
-            <thead class="text-black">
+          <table class="table table-light py-3">
+            <thead class="text-black thead-light">
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Event</th>
@@ -32,7 +32,23 @@
             </thead>
 
             <!-- for item in bookings -->
-            <!-- render details -->
+            <tr>
+              <td class="table-cell">
+                  <p>item.date</p>
+              </td>
+              <td class="table-cell">
+                <p>{{ item.name }}</p>
+              </td>
+              <td class="table-cell">
+                  <p>€{{ item.price }}</p>
+              </td>
+              <td class="table-cell">
+                qty form here
+              </td>
+              <td class="table-cell">
+                  <p>€subtotalhere</p>
+              </td>
+            </tr>
             <!-- endfor -->
 
             <!-- Render Total and options to return to events_list or checkout -->
