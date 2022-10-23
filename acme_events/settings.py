@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'home',
     'events',
     'checkout',
+    'bookings',
 ]
 
 MIDDLEWARE = [
