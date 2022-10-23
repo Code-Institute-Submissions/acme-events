@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <h1 class="text-center py-2">Error 500</h1>
+    <h2 class="text-center py-2">Pardon our error, would you like to return <a href="{% url 'home' %}">Home</a>?</h2>
+</main>
+{% endblock %}
