@@ -31,7 +31,7 @@
                 <p>item.name</p>
               </td>
               <td class="table-cell">
-                  <p>€item.price</p>
+                  <p>€xxx</p>
               </td>
               <td class="table-cell text-center">
                 qty form here
@@ -41,10 +41,17 @@
               </td>
             </tr>
             <!-- endfor -->
-            <tr>
-              <!-- Render Total and options to return to events_list or checkout -->
-            </tr>
           </table>
+          <!-- Render Total and option to checkout -->
+          <div class="justify-items-between">
+            <a href="{% url 'event_list' %}" class="btn rounded-0 btn-lg text-left">
+              <i class="fas fa-chevron-circle-left"></i>
+              <span class="text-uppercase">Back to Events</span>
+            </a>
+            <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg text-right">
+              <span class="text-uppercase">Secure Checkout</span><i class="fas fa-lock"></i>
+            </a>
+          </div>
           <!-- else (!bookings) -->
           <p>Your cart is currently empty.</p>
           <a href="{% url 'event_list' %}" class="btn rounded-0 btn-lg">
