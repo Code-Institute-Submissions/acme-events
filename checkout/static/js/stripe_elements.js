@@ -13,7 +13,7 @@ let style = {
         color: '#000000',
         fontFamily: 'Montserrat, sans-serif',
         fontSmoothing: 'antialiased',
-        fontSize: '16px',
+        fontSize: '14px',
         '::placeholder': {
             color: '#a7a9aa'
         }

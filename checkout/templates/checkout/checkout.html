@@ -10,31 +10,53 @@
 {% endblock %}
 
 {% block content %}
-<form action="" method="" id="payment-form">
-    {% csrf_token %}
-    <fieldset class="rounded">
-        <legend class="fieldset-label">Your Details</legend>
-        {{ booking_form.first_name }}
-        {{ booking_form.last_name }}
-        {{ booking_form.email }}
-        {{ booking_form.telephone }}
-    </fieldset>
-    <fieldset class="rounded">
-        <legend class="fieldset-label">Address</legend>
-        {{ booking_form.street_address1 }}
-        {{ booking_form.street_address2 }}
-        {{ booking_form.city_or_town }}
-        {{ booking_form.postcode }}
-        {{ booking_form.county }}
-        {{ booking_form.country }}
-    </fieldset>
-    <fieldset class="px-3">
-        <legend class="fieldset-label small text-black">Card Details:</legend>
-        <!-- Stripe card element mounted by stripe_elements.js -->
-        <div id="card-element"></div>
-        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-    </fieldset>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-7">
+            <p class="emphatic-text mt-3">Complete the form below to confirm your booking.</p>
+            <!-- ==== CHECKOUT FORM ==== -->
+            <form action="" method="" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded">
+                    <legend class="fieldset-label">Your Details</legend>
+                    <!-- ==== CUSTOMER DETAILS ==== -->
+                    {{ booking_form.first_name | as_crispy_field }}
+                    {{ booking_form.last_name | as_crispy_field }}
+                    {{ booking_form.email | as_crispy_field }}
+                    {{ booking_form.telephone | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded">
+                    <legend class="fieldset-label">Address</legend>
+                    {{ booking_form.street_address1 | as_crispy_field }}
+                    {{ booking_form.street_address2 | as_crispy_field }}
+                    {{ booking_form.city_or_town | as_crispy_field }}
+                    {{ booking_form.postcode | as_crispy_field }}
+                    {{ booking_form.county | as_crispy_field }}
+                    {{ booking_form.country | as_crispy_field }}
+                </fieldset>
+                <!-- ==== PAYMENT SECTION ==== -->
+                <fieldset class="mt-2">
+                    <legend class="fieldset-label small text-black">Card Details:</legend>
+                    <!-- Stripe card element mounted by stripe_elements.js -->
+                    <div id="card-element"></div>
+                    <!-- Card errors div -->
+                    <div class="mb-4 text-danger" id="card-errors" role="alert"></div>
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </fieldset>
+                <!-- ==== CONFIRM PAYMENT ==== -->
+                <div class="align-items-right text-right align-contents-right mb-4">
+                    <button id="submit-button" class="btn btn-warning text-uppercase">
+                        <span class="font-weight-bold">Confirm Payment</span>
+                    </button>
+                    <p class="mt-2">
+                            <i class="fas fa-exclamation-circle text-warning"></i>
+                        Your card will be charged <span class="font-weight-bold">€XX</span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 

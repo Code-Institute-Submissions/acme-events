@@ -1,3 +1,43 @@
-/* stripe-style-input {
- to be styled.
-} */
+/* CSS from Stripe documentation with only minor editing */
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  box-shadow: 0 1px 3px 0 var(--accent-color1);
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: var(--accent-color2);
+    border: 1px solid var(--accent-color2);
+}
+
+.fieldset-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+}
