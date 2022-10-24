@@ -34,15 +34,43 @@
                   <p>€xxx</p>
               </td>
               <td class="table-cell text-center">
-                qty form here
-              </td>
+                <!-- Quantity Form -->
+                <form class="" method="POST" action="">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <!-- prepend input with + button -->
+                        <button class="btn btn-sm rounded-0"
+                          id="decrement-qty_{{ item.event_id }}">
+                          <i class="fas fa-minus fa-sm"></i>
+                        </button>
+                      </div>
+                      <!-- Qty input follows: -->
+                      <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+                        value="{{ item.quantity }}" min="1" max="99"
+                        id="id_qty_{{ item.event_id }}">
+                      <div class="input-group-append">
+                        <!-- append - button to input -->
+                        <button class="btn btn-sm rounded-0" id="increment-qty_{{ item.event_id }}">
+                            <i class="fas fa-plus fa-sm"></i>
+                        </button>
+                      </div>
+                    </div> <!-- End of input group-->
+                  </div> <!-- End of form group-->
+                </form>
+              </td> <!-- End of Quantity form table cell-->
               <td class="table-cell d-none d-sm-table-cell">
                   <p>€subtotalhere</p>
               </td>
             </tr>
             <!-- endfor -->
+            <tr>
+              <td colspan="5" class="text-right">
+                <p class="emphatic-text">Total <span class="font-weight-bold text-black">€XX</span></p>
+              </td>
+            </tr>
           </table>
-          <!-- Render Total and option to checkout -->
           <div class="justify-items-between">
             <a href="{% url 'event_list' %}" class="btn rounded-0 btn-lg text-left">
               <i class="fas fa-chevron-circle-left"></i>
@@ -63,4 +91,9 @@
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% postload_js %}
+<!-- Add Qty form func. +/- here -->
+<!-- Also remove item functionality? -->
 {% endblock %}
