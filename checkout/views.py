@@ -3,13 +3,18 @@ from .forms import BookingForm
 
 
 def cart(request):
-    return render(request, 'checkout/cart.html')
+    page_specific_title = 'Your Cart'
+    context = {
+        'page_specific_title': page_specific_title,
+    }
+    return render(request, 'checkout/cart.html', context)
 
 
 def checkout(request):
     """ Stripe keys to be added """
 
     template = 'checkout/checkout.html'
+    page_specific_title = 'Checkout'
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
@@ -33,6 +38,7 @@ def checkout(request):
         booking_form = BookingForm()
 
     context = {
+            'page_specific_title': page_specific_title,
             'booking_form': booking_form,
         }
 

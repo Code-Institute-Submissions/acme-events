@@ -12,6 +12,7 @@ class EventList(ListView):
     queryset = Event.objects.filter(
         start_date__gte=current_date, published=True)
     template_name = "events/event-list.html"
+    page_specific_title = "Events"
 
 
 class EventDetailView(DetailView):
