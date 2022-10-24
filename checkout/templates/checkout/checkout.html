@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="" method="" id="">
+    {% csrf_token %}
+    <fieldset class="rounded">
+        <legend class="fieldset-label">Your Details</legend>
+        {{ booking_form.first_name }}
+        {{ booking_form.last_name }}
+        {{ booking_form.email }}
+        {{ booking_form.telephone }}
+    </fieldset>
+    <fieldset class="rounded">
+        <legend class="fieldset-label">Address</legend>
+        {{ booking_form.street_address1 }}
+        {{ booking_form.street_address2 }}
+        {{ booking_form.city_or_town }}
+        {{ booking_form.postcode }}
+        {{ booking_form.county }}
+        {{ booking_form.country }}
+    </fieldset>
+</form>
+
+{% endblock %}

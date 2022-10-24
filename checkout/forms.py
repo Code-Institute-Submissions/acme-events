@@ -10,7 +10,7 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('first_name', 'last_name', 'email', 'telephone',
                   'street_address1', 'street_address2',
-                  'town_or_city', 'postcode', 'county', 'country',)
+                  'city_or_town', 'postcode', 'county', 'country',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -22,16 +22,16 @@ class BookingForm(forms.ModelForm):
             'first_name': 'First Name',
             'last_name': 'Last Name',
             'email': 'Email Address',
-            'phone_number': 'Phone Number',
+            'telephone': 'Telephone',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
-            'town_or_city': 'Town or City',
+            'city_or_town': 'City or Town',
             'postcode': 'Postal Code',
             'county': 'County',
             'country': 'Country',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['first_name'].widget.attrs['autofocus'] = True
         # place focus on first field (first_name)
         for field in self.fields:
             if self.fields[field].required:
