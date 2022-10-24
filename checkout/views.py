@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 from .forms import BookingForm
 
 import stripe
+import json
 
 
 def cart(request):
@@ -18,6 +20,9 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
     page_specific_title = 'Checkout'
+
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
@@ -43,6 +48,8 @@ def checkout(request):
     context = {
             'page_specific_title': page_specific_title,
             'booking_form': booking_form,
+            'stripe_public_key': stripe_public_key,
+            'client_secret': 'temporary',
         }
 
     return render(request, template, context)
