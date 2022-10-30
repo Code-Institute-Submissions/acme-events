@@ -7,14 +7,6 @@ import stripe
 import json
 
 
-def cart(request):
-    page_specific_title = 'Your Cart'
-    context = {
-        'page_specific_title': page_specific_title,
-    }
-    return render(request, 'checkout/cart.html', context)
-
-
 def checkout(request):
     """ Stripe keys to be added """
 
