@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
-from .forms import BookingForm
+from .forms import CheckoutForm
 
 import stripe
 import json
@@ -39,15 +39,15 @@ def checkout(request):
             'county': request.POST['county'],
             'country': request.POST['country'],
         }
-        booking_form = BookingForm(form_data)
-        if booking_form.is_valid():
-            booking = booking_form.save(commit=False)
+        checkout_form = CheckoutForm(form_data)
+        if checkout_form.is_valid():
+            booking = checkout_form.save(commit=False)
     else:
-        booking_form = BookingForm()
+        checkout_form = CheckoutForm()
 
     context = {
             'page_specific_title': page_specific_title,
-            'booking_form': booking_form,
+            'checkout_form': checkout_form,
             'stripe_public_key': stripe_public_key,
             'client_secret': 'temporary',
         }

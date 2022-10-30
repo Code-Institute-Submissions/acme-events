@@ -20,19 +20,19 @@
                 <fieldset class="rounded">
                     <legend class="fieldset-label">Your Details</legend>
                     <!-- ==== CUSTOMER DETAILS ==== -->
-                    {{ booking_form.first_name | as_crispy_field }}
-                    {{ booking_form.last_name | as_crispy_field }}
-                    {{ booking_form.email | as_crispy_field }}
-                    {{ booking_form.telephone | as_crispy_field }}
+                    {{ checkout_form.first_name | as_crispy_field }}
+                    {{ checkout_form.last_name | as_crispy_field }}
+                    {{ checkout_form.email | as_crispy_field }}
+                    {{ checkout_form.telephone | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded">
                     <legend class="fieldset-label">Address</legend>
-                    {{ booking_form.street_address1 | as_crispy_field }}
-                    {{ booking_form.street_address2 | as_crispy_field }}
-                    {{ booking_form.city_or_town | as_crispy_field }}
-                    {{ booking_form.postcode | as_crispy_field }}
-                    {{ booking_form.county | as_crispy_field }}
-                    {{ booking_form.country | as_crispy_field }}
+                    {{ checkout_form.street_address1 | as_crispy_field }}
+                    {{ checkout_form.street_address2 | as_crispy_field }}
+                    {{ checkout_form.city_or_town | as_crispy_field }}
+                    {{ checkout_form.postcode | as_crispy_field }}
+                    {{ checkout_form.county | as_crispy_field }}
+                    {{ checkout_form.country | as_crispy_field }}
                 </fieldset>
                 <!-- ==== PAYMENT SECTION ==== -->
                 <fieldset class="mt-2">

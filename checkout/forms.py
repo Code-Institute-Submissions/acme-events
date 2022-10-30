@@ -2,9 +2,9 @@ from django import forms
 from bookings.models import Booking
 
 
-class BookingForm(forms.ModelForm):
+class CheckoutForm(forms.ModelForm):
     """
-    Booking form for checkout page. Auto-generated fields are omitted
+    Checkout form for checkout page. Auto-generated fields are omitted
     """
     class Meta:
         model = Booking
