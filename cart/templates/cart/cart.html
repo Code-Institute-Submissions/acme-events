@@ -9,29 +9,29 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <!-- if bookings condition -->
+      {% if cart_items %}
         <div class="table-responsive rounded py-3">
           <table class="table table-sm">
             <thead class="text-black thead-light">
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Event</th>
-                <th scope="col">Price</th>
+                <th scope="col">Per Ticket</th>
                 <th scope="col" class="text-center">Qty</th>
                 <th scope="col" class="d-none d-sm-table-cell">Subtotal</th>
               </tr>
             </thead>
 
-            <!-- for item in bookings -->
+            {% for item in cart_items %}
             <tr>
               <td class="table-cell">
-                  <p class="font-weight-bold">item.date</p>
+                  <p class="font-weight-bold">{{ item.event.start_date }}</p>
               </td>
               <td class="table-cell">
-                <p>item.name</p>
+                <p>{{ item.event.name }}</p>
               </td>
               <td class="table-cell">
-                  <p>€xxx</p>
+                  <p>€{{ item.event.price }}</p>
               </td>
               <td class="table-cell text-center">
                 <!-- Quantity Form -->
@@ -61,13 +61,13 @@
                 </form>
               </td> <!-- End of Quantity form table cell-->
               <td class="table-cell d-none d-sm-table-cell">
-                  <p>€subtotalhere</p>
+                  <p>€{{ item.subtotal|floatformat:2 }}</p>
               </td>
             </tr>
-            <!-- endfor -->
+            {% endfor %}
             <tr>
               <td colspan="5" class="text-right">
-                <p class="emphatic-text">Total <span class="font-weight-bold text-black">€XX</span></p>
+                <p class="emphatic-text">Total <span class="font-weight-bold text-black">€{{ total|floatformat:2 }}</span></p>
               </td>
             </tr>
           </table>
@@ -80,14 +80,14 @@
               <span class="text-uppercase">Secure Checkout</span><i class="fas fa-lock"></i>
             </a>
           </div>
-          <!-- else (!bookings) -->
-          <p>Your cart is currently empty.</p>
+      {% else %}
+          <p class="mt-3 mt-md-5">Your cart is currently empty.</p>
           <a href="{% url 'event_list' %}" class="btn rounded-0 btn-lg">
             <i class="fas fa-chevron-circle-left"></i>
             <span class="text-uppercase">Back to Events</span>
           </a>
         </div>
-      <!-- endif here -->
+      {% endif %}
       </div>
     </div>
   </div>
