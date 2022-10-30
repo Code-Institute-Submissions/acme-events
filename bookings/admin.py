@@ -4,7 +4,7 @@ from .models import Booking
 
 class BookingAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('booking_id',)
+    readonly_fields = ('booking_id', 'created_at', )
 
     fields = ('first_name', 'last_name', 'email', 'created_at', 'booking_id')
 
