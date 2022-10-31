@@ -35,7 +35,7 @@
               </td>
               <td class="table-cell text-center">
                 <!-- Quantity Form -->
-                <form class="" method="POST" action="">
+                <form class="update-qty-form" method="POST" action="{% url 'amend_cart' item.event_id %}">
                   {% csrf_token %}
                   <div class="form-group">
                     <div class="input-group">
@@ -50,6 +50,9 @@
                     </div> <!-- End of input group-->
                   </div> <!-- End of form group-->
                 </form>
+                <!-- Update Qty & Remove Item Links -->
+                <a class="update-link text-info"><small>Update</small></a>
+                <a class="remove-item text-danger float-right" id="remove_{{ item.event_id }}"><small>Remove</small></a>
               </td> <!-- End of Quantity form table cell-->
               <td class="table-cell d-none d-sm-table-cell">
                   <p>€{{ item.subtotal|floatformat:2 }}</p>
@@ -87,5 +90,13 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'events/includes/quantity-control.html' %}
-<!-- Also remove item functionality? -->
+
+<script type="text/javascript">
+  // Update quantity on click
+  $('.update-link').click(function(e) {
+  let form = $(this).prev('.update-qty-form');
+  form.submit();
+  })
+</script>
+
 {% endblock %}

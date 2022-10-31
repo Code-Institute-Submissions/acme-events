@@ -134,6 +134,12 @@ hr {
     border-top: 2px solid var(--accent-color1);
 }
 
+ /* ====== Cursors ======  */
+ 
+.remove-item, .update-link {
+    cursor: pointer;
+}
+
  /* ====== Media Queries ======  */
 
  @media (max-width: 768px) {
