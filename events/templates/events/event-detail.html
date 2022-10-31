@@ -105,3 +105,8 @@
 
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'events/includes/quantity-control.html' %}
+{% endblock %}

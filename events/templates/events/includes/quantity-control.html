@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    // INCREMENT QUANTITY
+    $('.increment-qty').click(function(e) {
+        // identify target element and begin function to occur in event of click
+       e.preventDefault();
+       // prevent default action
+       let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       // find closest input group to clicked element:
+       // .closest() searches up the DOM, and will therefore find the .input-group class
+       // on the div containing the clicked button element.
+       // .find() searches down from this point, and will find the first element in
+       // that div that has the .qty_input class.
+       let currentValue = parseInt($(closestInput).val());
+       // store the value found therein as a variable called currentValue
+
+       
+       $(closestInput).val(currentValue + 1);
+       // overwrite closest input by adding 1 to current value
+       let eventId = $(this).data('event_id');
+       // declare eventId and set equal to the value of the event_id att. (event.id)
+    });
+
+    // DECREMENT QUANTITY
+    $('.decrement-qty').click(function(e) {
+        // As above, but decrement instead of increment
+       e.preventDefault();
+       let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       let currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       let eventId = $(this).data('event_id');
+    });
+</script>

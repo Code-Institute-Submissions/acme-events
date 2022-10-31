@@ -40,9 +40,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <!-- prepend input with + button -->
-                        <button class="btn btn-sm rounded-0"
-                          id="decrement-qty_{{ item.event_id }}">
+                        <!-- prepend input with - button -->
+                        <button type="button" class="decrement-qty btn btn-sm rounded-0"
+                          id="decrement-qty_{{ event_id }}" data-event_id="{{ event.id }}">
                           <i class="fas fa-minus fa-sm"></i>
                         </button>
                       </div>
@@ -51,8 +51,8 @@
                         value="{{ item.quantity }}" min="1" max="99"
                         id="id_qty_{{ item.event_id }}">
                       <div class="input-group-append">
-                        <!-- append - button to input -->
-                        <button class="btn btn-sm rounded-0" id="increment-qty_{{ item.event_id }}">
+                        <!-- append + button to input -->
+                        <button type="button" class="increment-qty btn btn-sm rounded-0" id="increment-qty_{{ item.event_id }}" data-event_id="{{ event.id }}">
                             <i class="fas fa-plus fa-sm"></i>
                         </button>
                       </div>
@@ -94,6 +94,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-<!-- Add Qty form func. +/- here -->
+{{ block.super }}
+{% include 'events/includes/quantity-control.html' %}
 <!-- Also remove item functionality? -->
 {% endblock %}
