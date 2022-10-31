@@ -1,4 +1,56 @@
 <script type="text/javascript">
+
+    // DISABLE +/- BUTTONS OUTSIDE 1-99 RANGE
+    function handleEnableDisable(eventId) {
+        // Declare a function to handle enabling/disabling of the buttons
+        // which makes use of the event id since each input is associated
+        // with a particular event id
+        let currentValue = parseInt($(`#id_qty_${eventId}`).val());
+        // get the currentValue based on value inside the input, as
+        // identified by its element id (id_qty+eventId) which in the
+        // HTML, looks like this: id="id_qty_{{ event.id }}">
+        // eventId declared below (but before this func. is called).
+        let minusDisabled = currentValue < 2;
+        // declare and set minusDisabled to mean 'when currentValue is less than 2'
+        // ie. when currentValue gets to 1.
+        let plusDisabled = currentValue > 98;
+        // plusDisabled = when currentValue is greater than 98, ie. when it's 99
+        $(`#decrement-qty_${eventId}`).prop('disabled', minusDisabled);
+        // Apply the 'disabled' property to the decrement button when minusDisabled is True
+        $(`#increment-qty_${eventId}`).prop('disabled', plusDisabled);
+        // Apply the 'disabled' property to the increment button the plusDisabled is True
+    }
+
+    // ENSURE PROPER ENABLING/DISABLING OF ALL INPUTS ON PAGE LOAD
+    let allQtyInputs = $('.qty_input');
+    // identify target elements: everythig iwth a class of .qty_input
+    for(let i = 0; i < allQtyInputs.length; i++){
+        // iterate through each of them
+        let eventId = $(allQtyInputs[i]).data('event_id');
+        // ensure eventId is understood by declaring it, so that
+        // for each iteration, your code understands how to handle
+        // 'eventId' when it's used in the function that follows here:
+        handleEnableDisable(eventId);
+        // apply the handleEnableDisable function to each input (button)
+        // in the loop. Note that this will be the first bit of code to actually
+        // run when the page has loaded and you get to this post-load JS, since
+        // the code above this point is a function definition and not actually
+        // calling that function. Thus, when the page loads, the handleEnableDisable
+        // function will be run on every +/- button, preventing the possability of a
+        // user clicking the minus button and turning the default value from 1 to 0.
+    }
+
+    // CHECK ENABLE/DISABLE EVERY TIME THE INPUT IS CHANGED
+    $('.qty_input').change(function() {
+        // Listen out for change event on the qty_input
+        let eventId = $(this).data('event_id');
+        // as before, declare itemId here so that it is understood when implemented
+        // in the function called below:
+        handleEnableDisable(itemId);
+        // Call handleEnableDisable each time the input on a given input changes,
+        // so as to ensure the -/+ buttons are disables/enabled whenver appropriate.
+    });
+
     // INCREMENT QUANTITY
     $('.increment-qty').click(function(e) {
         // identify target element and begin function to occur in event of click
@@ -12,12 +64,13 @@
        // that div that has the .qty_input class.
        let currentValue = parseInt($(closestInput).val());
        // store the value found therein as a variable called currentValue
-
-       
        $(closestInput).val(currentValue + 1);
        // overwrite closest input by adding 1 to current value
        let eventId = $(this).data('event_id');
        // declare eventId and set equal to the value of the event_id att. (event.id)
+       handleEnableDisable(eventId);
+        // Call handleEnableDisable each time the input on a given input changes,
+        // to ensure the -/+ buttons are disables/enabled whenver appropriate.
     });
 
     // DECREMENT QUANTITY
@@ -28,5 +81,6 @@
        let currentValue = parseInt($(closestInput).val());
        $(closestInput).val(currentValue - 1);
        let eventId = $(this).data('event_id');
+       handleEnableDisable(eventId);
     });
 </script>

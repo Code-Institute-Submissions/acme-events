@@ -40,20 +40,11 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <!-- prepend input with - button -->
-                        <button type="button" class="decrement-qty btn btn-sm rounded-0"
-                          id="decrement-qty_{{ event_id }}" data-event_id="{{ event.id }}">
-                          <i class="fas fa-minus fa-sm"></i>
-                        </button>
+                        <button type="button" class="decrement-qty btn rounded-0" data-event_id="{{ item.event_id }}" id="decrement-qty_{{ item.event_id }}"><i class="fas fa-minus"></i></button>
                       </div>
-                      <!-- Qty input follows: -->
-                      <input class="form-control form-control-sm qty_input" type="number" name="quantity"
-                        value="{{ item.quantity }}" min="1" max="99"
-                        id="id_qty_{{ item.event_id }}">
+                      <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-event_id="{{ item.event.id }}" id="id_qty_{{ item.event_id }}">
                       <div class="input-group-append">
-                        <!-- append + button to input -->
-                        <button type="button" class="increment-qty btn btn-sm rounded-0" id="increment-qty_{{ item.event_id }}" data-event_id="{{ event.id }}">
-                            <i class="fas fa-plus fa-sm"></i>
+                        <button type="button" class="increment-qty btn rounded-0" data-event_id="{{ item.event_id }}" id="increment-qty_{{ item.event_id }}"><i class="fas fa-plus"></i>
                         </button>
                       </div>
                     </div> <!-- End of input group-->
