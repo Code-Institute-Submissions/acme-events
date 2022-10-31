@@ -97,6 +97,27 @@
   let form = $(this).prev('.update-qty-form');
   form.submit();
   })
+
+  // Remove item and reload on click
+  $('.remove-item').click(function(e) {
+    console.log("1");
+    let csrfToken = "{{ csrf_token }}";
+    console.log("2");
+    let eventId = $(this).attr('id').split('remove_')[1];
+    console.log("3");
+    let data = {'csrfmiddlewaretoken': csrfToken,};
+    console.log("4");
+    let url = `/remove/${eventId}/`;
+    console.log("5");
+
+    $.post(url, data)	
+      .done(function() {	
+        console.log("6");
+          location.reload();
+          console.log("7");	
+      });	
+  })
+
 </script>
 
 {% endblock %}

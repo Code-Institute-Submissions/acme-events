@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
 from django.contrib import messages
 
 from events.models import Event
@@ -46,8 +46,24 @@ def amend_cart(request, event_id):
         messages.success(request, f'Quantity updated successfully.')
     else:
         cart.pop(event_id)
-        messages.success(request, f'Removed {event.name} from your bag')
+        messages.success(request, f'Removed {event.name} from your cart.')
 
     request.session['cart'] = cart
 
     return redirect(reverse('view_cart'))
+
+
+def remove_from_cart(request, event_id):
+    """Remove event entirely from cart"""
+    try:
+        event = get_object_or_404(Event, pk=event_id)
+        cart = request.session.get('cart', {})
+        cart.pop(event_id)
+        messages.success(request, f'Removed {event.name} from your cart.')
+
+        request.session['cart'] = cart
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, f'Error: {e}')
+        print(e)
+        return HttpResponse(status=500)
