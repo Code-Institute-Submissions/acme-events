@@ -140,6 +140,15 @@ hr {
     cursor: pointer;
 }
 
+ /* ====== Toasts, Messages, Notifications ======  */
+ 
+ .custom-toast {
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
  /* ====== Media Queries ======  */
 
  @media (max-width: 768px) {

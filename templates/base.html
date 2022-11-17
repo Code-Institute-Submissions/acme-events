@@ -55,6 +55,24 @@
     {% endblock %}
     </header>
 
+    {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast-error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast-warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast-success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast-info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
     
@@ -85,18 +103,22 @@
     </footer>
 
     {% block postloadjs %}
-    {% endblock %}
-
-    <script>
-        // Apply background color to nav when scrolled below page-header for ease of reading.
-        $(function () {
-        $(document).scroll(function(){
-            let $navItem = $(".nav-item");
-            let $pageHeader = $(".page-header");
-            $navItem.toggleClass("scrolled", $(this).scrollTop() > $pageHeader.height());
-        });
-        });
+    <script type="text/javascript">
+        // Display toasts
+        $('.toast').toast('show');
     </script>
+
+<script>
+    // Apply background color to nav when scrolled below page-header for ease of reading.
+    $(function () {
+    $(document).scroll(function(){
+        let $navItem = $(".nav-item");
+        let $pageHeader = $(".page-header");
+        $navItem.toggleClass("scrolled", $(this).scrollTop() > $pageHeader.height());
+    });
+    });
+</script>
+    {% endblock %}
 </body>
 
 </html>

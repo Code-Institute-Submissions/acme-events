@@ -65,5 +65,4 @@ def remove_from_cart(request, event_id):
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, f'Error: {e}')
-        print(e)
         return HttpResponse(status=500)
