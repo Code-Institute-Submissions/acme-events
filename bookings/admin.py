@@ -1,8 +1,14 @@
 from django.contrib import admin
-from .models import Booking
+from .models import Booking, BookingLineItem
+
+
+class BookingLineItemAdminInline(admin.TabularInline):
+    model = BookingLineItem
+    readonly_fields = ('lineitem_total',)
 
 
 class BookingAdmin(admin.ModelAdmin):
+    inlines = (BookingLineItemAdminInline,)
 
     readonly_fields = ('booking_id', 'created_at', )
 
