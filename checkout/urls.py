@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
+    path('checkout-success/<booking_id>', views.checkout_success, name='checkout_success'),
 ]

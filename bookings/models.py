@@ -18,8 +18,11 @@ class Booking(models.Model):
     country = models.CharField(verbose_name=('Country'), max_length=100, default="Ireland")
     telephone = models.CharField(verbose_name=('Telephone'), max_length=25, null=False, blank=False)
     email = models.EmailField(verbose_name=('Email'))
-    created_at = models.DateTimeField(verbose_name=('Created at'), auto_now_add=True)
+    created_at = models.DateTimeField(verbose_name=('Booking Date'), auto_now_add=True)
     booking_id = models.UUIDField(verbose_name=('Booking ID'), primary_key=True, default=uuid.uuid4)
+    booking_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def __str__(self):
         return str(self.booking_id)
