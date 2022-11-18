@@ -30,7 +30,6 @@ card.mount('#card-element');
 
 // Handle card validation errors:
 card.addEventListener('change', function (event) {
-    console.log('js stage one')
     let errorDiv = document.getElementById('card-errors');
     if (event.error) {
         let html = `
@@ -47,25 +46,35 @@ card.addEventListener('change', function (event) {
 
 // Handle form submit (from Stripe Docs with modifications from Boutique Ado finished code via Code Institute):
 let form = document.getElementById('payment-form');
-console.log('js: identified form')
 
 form.addEventListener('submit', function(ev) {
-    console.log('js: entered event listenter: submit')
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
-    console.log('js: identified key elements')
+    let first_name = $.trim(form.first_name.value);
+    let last_name = $.trim(form.last_name.value);
+    let full_name = first_name.concat(" ", last_name);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
+        billing_details: {
+            name: full_name,
+            phone: $.trim(form.telephone.value),
+            email: $.trim(form.email.value),
+            address:{
+                line1: $.trim(form.street_address1.value),
+                line2: $.trim(form.street_address2.value),
+                city: $.trim(form.city_or_town.value),
+                country: $.trim(form.country.value),
+                state: $.trim(form.county.value),
+            }
         }
+    }
     }).then(function(result) {
-        console.log('js: into function result')
         if (result.error) {
             // In the event of an error:
-            console.log('js: result: error')
             var errorDiv = document.getElementById('card-errors');
             var html = `
                 <span class="icon" role="alert">
@@ -80,10 +89,8 @@ form.addEventListener('submit', function(ev) {
             card.update({ 'disabled': false});
             $('#submit-button').attr('disabled', false);
             // Re-eable card-details inputs and submit button
-            console.log('js stage 11')
         } else {
             if (result.paymentIntent.status === 'succeeded') {
-                console.log('js: result:success')
                 form.submit();
             }
         }
