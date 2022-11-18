@@ -1,4 +1,5 @@
 import uuid
+from django.db.models import Sum
 from django.db import models
 
 from events.models import Event
@@ -81,15 +82,38 @@ class Booking(models.Model):
         default=''
         )
 
+    def _create_booking_id(self):
+        """
+        Generate a random, unique booking id using UUID
+        """
+        return uuid.uuid4().hex.upper()
+
+    def update_total(self):
+        """
+        Update total each time a booking line item is added
+        """
+        self.booking_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.save()
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set booking number
+        if it hasn't been set already.
+        """
+        if not self.booking_id:
+            self.booking_id = self._create_booking_id()
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return str(self.booking_id)
 
 
 class BookingLineItem(models.Model):
     """
-    LineItems represent individual products within an order,
-    although multiple instances of an idential product are regarded as
-    one line item with a stated quantity, as in a standard invoice
+    LineItems represent individual events within a booking,
+    although multiple instances of an identical event (ie. tickets) are
+    regarded as one line item with a stated quantity,
+    as in a standard invoice
     """
     booking = models.ForeignKey(
         Booking,

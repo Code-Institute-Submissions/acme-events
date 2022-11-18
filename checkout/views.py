@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from events.models import Event
-from .models import Booking
+from .models import Booking, BookingLineItem
 from .forms import CheckoutForm
 from cart.contexts import cart_contents
 
@@ -45,6 +45,26 @@ def checkout(request):
             booking.stripe_pid = pid
             print('string info identified')
             booking.save()
+            for item_id, item_data in cart.items():
+                try:
+                    print('entered try block')
+                    event = Event.objects.get(id=item_id)
+                    booking_line_item = BookingLineItem(
+                        booking=booking,
+                        event=event,
+                        quantity=item_data,
+                    )
+                    print('completed declaration portion of try block')
+                    booking_line_item.save()
+                    print('line item saved')
+                except Event.DoesNotExist:
+                    messages.error(request, (
+                        "One of the events in your cart no longer exists \
+                            within our database. "
+                        "Please call us for assistance!")
+                    )
+                    order.delete()
+                    return redirect(reverse('view_cart'))
             print('form data saved')
             request.session['save_info'] = 'save-info' in request.POST
             print(5)

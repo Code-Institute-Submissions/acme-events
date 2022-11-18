@@ -20,7 +20,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = ('booking_id', 'created_at', 'first_name',
                     'last_name',)
 
-    ordering = ('created_at',)
+    ordering = ('-created_at',)
 
 
 admin.site.register(Booking, BookingAdmin)
