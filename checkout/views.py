@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from events.models import Event
-from bookings.models import Booking
+from .models import Booking
 from .forms import CheckoutForm
 from cart.contexts import cart_contents
 
@@ -16,10 +16,12 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
     page_specific_title = 'Checkout'
+    print('stage 1')
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     if request.method == 'POST':
+        print('post method identified')
         # checkout form handling
         cart = request.session.get('cart', {})
         form_data = {
@@ -34,17 +36,20 @@ def checkout(request):
             'county': request.POST['county'],
             'country': request.POST['country'],
         }
-        print(4)
+        print('form data identified')
         checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
+            print('form found valid')
             booking = checkout_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             booking.stripe_pid = pid
-            booking.original_cart = json.dumps(bag)
+            print('string info identified')
             booking.save()
+            print('form data saved')
             request.session['save_info'] = 'save-info' in request.POST
             print(5)
-            return redirect(reverse('checkout-success', args=[booking.booking_id]))
+            return redirect(
+                reverse('checkout-success', args=[booking.booking_id]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')

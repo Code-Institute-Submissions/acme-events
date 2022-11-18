@@ -15,7 +15,7 @@
         <div class="col-12 col-lg-7">
             <p class="emphatic-text mt-3">Complete the form below to confirm your booking.</p>
             <!-- ==== CHECKOUT FORM ==== -->
-            <form action="" method="" id="payment-form">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded">
                     <legend class="fieldset-label">Your Details</legend>
