@@ -111,17 +111,17 @@ def checkout_success(request, booking_id):
     """
     Handle successful checkouts
     """
+    page_specific_title = 'Success'
     save_info = request.session.get('save_info')
     booking = get_object_or_404(Booking, booking_id=booking_id)
-    messages.success(request, f'Booking successfully processed! \
-        Your booking ID is {booking_id}. A confirmation \
-        email will be sent to {booking.email}.')
+    messages.success(request, f'Booking successfully processed!')
 
     if 'cart' in request.session:
         del request.session['cart']
 
     template = 'checkout/checkout-success.html'
     context = {
+        'page_specific_title': page_specific_title,
         'booking': booking,
     }
 

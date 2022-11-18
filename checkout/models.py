@@ -8,7 +8,7 @@ from events.models import Event
 class Booking(models.Model):
     """
     Contain relevant info for bookings;
-    still to add connection to event + quantity via lineitems
+    Event specific details and quantity stored in BookingLineItem
     """
 
     first_name = models.CharField(
