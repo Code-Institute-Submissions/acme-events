@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
 from django.conf import settings
 
@@ -14,7 +15,6 @@ import json
 def checkout(request):
     """ Render checkout page and/or handle checkout form """
 
-    template = 'checkout/checkout.html'
     page_specific_title = 'Checkout'
     print('stage 1')
 
@@ -28,10 +28,10 @@ def checkout(request):
             'first_name': request.POST['first_name'],
             'last_name': request.POST['last_name'],
             'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
+            'telephone': request.POST['telephone'],
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
-            'town_or_city': request.POST['town_or_city'],
+            'city_or_town': request.POST['city_or_town'],
             'postcode': request.POST['postcode'],
             'county': request.POST['county'],
             'country': request.POST['country'],
@@ -56,6 +56,7 @@ def checkout(request):
             print(6)
     else:
         checkout_form = CheckoutForm()
+        template = 'checkout/checkout.html'
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(request, 'You currently have no items in your cart')
@@ -80,6 +81,7 @@ def checkout(request):
             'checkout_form': checkout_form,
             'stripe_public_key': stripe_public_key,
             'client_secret': intent.client_secret,
+            'stripe_total': stripe_total,
         }
 
     return render(request, template, context)

@@ -47,72 +47,25 @@ card.addEventListener('change', function (event) {
 
 // Handle form submit (from Stripe Docs with modifications from Boutique Ado finished code via Code Institute):
 let form = document.getElementById('payment-form');
-console.log('js stage two')
+console.log('js: identified form')
 
 form.addEventListener('submit', function(ev) {
+    console.log('js: entered event listenter: submit')
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
-    console.log('js stage three')
-    let saveInfo = Boolean($('#id-save-info').attr('checked'));
-    console.log('js stage 4')
-    // Get value of checkbox by looking at its checked attr
-    let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-    console.log('js stage 5')
-    // From using {% csrf_token %} in the form
-    let postData = {
-        // This section, pulling in client_secret from the post
-        // reqest made by Stripe, corrects the 'intent' referenced
-        // before assignment error you may have had.
-        'csrfmiddlewaretoken': csrfToken,
-        'client_secret': clientSecret,
-        'save_info': saveInfo,
-    };
-    console.log('js stage 6')
-    let url = '/checkout/cache_checkout_data/';
-    console.log('js stage 7')
-
-    $.post(url, postData).done(function () {
-        console.log('js stage 8')
-    // jQuery: send 'postData' to url and only when 'done'
-    // proceed to the following (a callback function), but bear in
-    // mind that this callback function only runs if you receive a
-    // 200 OK response (see cache_checkout_data view):
+    console.log('js: identified key elements')
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
-        //     billing_details: {
-        //         name: $.trim(form.full_name.value),
-        //         phone: $.trim(form.phone_number.value),
-        //         email: $.trim(form.email.value),
-        //         address:{
-        //             line1: $.trim(form.street_address1.value),
-        //             line2: $.trim(form.street_address2.value),
-        //             city: $.trim(form.town_or_city.value),
-        //             country: $.trim(form.country.value),
-        //             state: $.trim(form.county.value),
-        //         }
-        //     }
-        // },
-        // shipping: {
-        //     name: $.trim(form.full_name.value),
-        //     phone: $.trim(form.phone_number.value),
-        //     address: {
-        //         line1: $.trim(form.street_address1.value),
-        //         line2: $.trim(form.street_address2.value),
-        //         city: $.trim(form.town_or_city.value),
-        //         country: $.trim(form.country.value),
-        //         postal_code: $.trim(form.postcode.value),
-        //         state: $.trim(form.county.value),
-        //     }
-        },
+        }
     }).then(function(result) {
-        console.log('js stage 9')
+        console.log('js: into function result')
         if (result.error) {
             // In the event of an error:
-            console.log('js stage 10')
+            console.log('js: result: error')
             var errorDiv = document.getElementById('card-errors');
             var html = `
                 <span class="icon" role="alert">
@@ -130,16 +83,9 @@ form.addEventListener('submit', function(ev) {
             console.log('js stage 11')
         } else {
             if (result.paymentIntent.status === 'succeeded') {
-                console.log('js stage 12')
+                console.log('js: result:success')
                 form.submit();
             }
         }
     });
-}).fail(function () {
-    // If view sends back a 400 Bad Request response instead,
-    // just reload the page, the error will be in django messages
-    console.log('triggered: fail function in stripe_elements.js')
-    location.reload();
-})
 });
-
