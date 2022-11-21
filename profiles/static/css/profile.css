@@ -1,0 +1,4 @@
+.booking-history {
+    max-height: 416px; /* height of profile form and update button */
+    overflow-y: auto;
+}

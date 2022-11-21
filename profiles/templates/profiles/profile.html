@@ -11,8 +11,8 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-lg-6">
+    <div class="row pt-4">
+        <div class="col-12 col-lg-4">
             <h2 class="text-muted">Account Details</h2>
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
@@ -20,10 +20,43 @@
                 <button class="btn rounded-0 text-uppercase float-right">Update Account</button>
             </form>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-8">
             <h2 class="text-muted">Tickets</h2>
             {% if bookings %}
-                {{ bookings }}
+            <div class="table-responsive booking-history ">
+                <table class="table table-borderles table-sm">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th colspan="2">Date</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in bookings %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'booking_history' booking.booking_id %}"
+                                    title="{{ booking.booking_id }}">
+                                        {{ booking.booking_id|truncatechars:8 }}
+                                    </a>
+                                </td>
+                                <td colspan="2">{{ booking.created_at.date }}</td>
+                                <td>${{ booking.booking_total }}</td>
+                            </tr>
+                                {% for item in booking.lineitems.all %}
+                                <tr>
+                                    <td colspan="4" class="pl-3 pl-lg-5 font-weight-bold small">
+                                        <ul>
+                                            <li>{{ item.event.name }} ({{ item.quantity }})
+                                                on {{ item.event.start_date }}</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                </table>
             {% else %}
                 <p>You currently have no past or present bookings.</p>
             {% endif %}

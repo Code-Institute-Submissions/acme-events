@@ -6,7 +6,9 @@ from django.views.decorators.http import require_POST
 
 from events.models import Event
 from .models import Booking, BookingLineItem
+from profiles.models import UserProfile
 from .forms import CheckoutForm
+from profiles.forms import UserProfileForm
 from cart.contexts import cart_contents
 
 import stripe
@@ -136,6 +138,30 @@ def checkout_success(request, booking_id):
     page_specific_title = 'Success'
     save_info = request.session.get('save_info')
     booking = get_object_or_404(Booking, booking_id=booking_id)
+
+    # for signed-in users:
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # identify user profile
+        booking.user_profile = profile
+        # assign identified profile to booking
+        booking.save()
+
+    # If save_info checked:
+        if save_info:
+            profile_data = {
+                'default_street_address1': booking.street_address1,
+                'default_street_address2': booking.street_address2,
+                'default_city_or_town': booking.city_or_town,
+                'default_county': booking.county,
+                'default_postcode': booking.postcode,
+                'default_country': booking.country,
+                'default_telephone': booking.telephone,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     messages.success(request, f'Booking successfully processed!')
 
     if 'cart' in request.session:

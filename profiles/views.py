@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 
 from .models import UserProfile
+from checkout.models import Booking
 from .forms import UserProfileForm
-from django.contrib import messages
 
 
 def profile(request):
@@ -27,6 +28,22 @@ def profile(request):
         'form': form,
         'bookings': bookings,
         'viewing_profile': True,
+    }
+
+    return render(request, template, context)
+
+
+def booking_history(request, booking_id):
+    booking = get_object_or_404(Booking, booking_id=booking_id)
+
+    messages.info(request, (
+        f'This is a past confirmation for booking id: {booking_id}. '
+        'Confirmation was sent by email at the time of booking.'))
+
+    template = 'checkout/checkout-success.html'
+    context = {
+        'booking': booking,
+        'from_profile': True,
     }
 
     return render(request, template, context)
