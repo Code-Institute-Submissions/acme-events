@@ -12,7 +12,7 @@
                 {{ message }}
             </div>
         </div>
-        {% if total %}
+        {% if total and not viewing_profile %}
         <p class="bg-white text-black py-2">Your Cart ({{ ticket_count }})</p>
         <div>
             {% for item in cart_items %}
