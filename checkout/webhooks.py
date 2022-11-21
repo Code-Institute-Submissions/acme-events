@@ -28,19 +28,19 @@ def webhook(request):
     # Get the webhook data and verify its signature:
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    stripe_event = None
+    event = None
     print('webhooks.py: Stage one')
 
     try:
         print('entered try block')
-        stripe_event = stripe.Webhook.construct_event(
+        event = stripe.Webhook.construct_event(
             payload, sig_header, wh_secret
             # wh_secret changed from sample code variable name
         )
         print('exiting block')
     except ValueError as e:
         # Invalid payload
-        print('inalid payload')
+        print('invalid payload')
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
@@ -57,7 +57,7 @@ def webhook(request):
     print('webhooks.py: Stage two')
 
     # Map webhook events to relevant handler
-    stripe_event_map = {
+    event_map = {
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
         'payment_intent.payment_failed':
             handler.handle_payment_intent_payment_failed,
@@ -65,18 +65,18 @@ def webhook(request):
     print('webhooks.py: Stage three')
 
     # Get the webhook type from Stripe
-    stripe_event_type = event['type']
+    event_type = event['type']
     print('webhooks.py: Stage four')
 
     # Assign this as the value of a variable called stripe_event_handler
     # stripe_event_handler is then an alias for whichever function you get
     # from the dictionary; give it the generic 'handle_stripe_event' by default
     stripe_event_handler = event_map.get(
-        stripe_event_type, handler.handle_stripe_event)
+        event_type, handler.handle_stripe_event)
     print('webhooks.py: Stage five')
 
     # Call the selected event handler function, passing it the event
     # received from Stripe:
-    response = stripe_event_handler(stripe_event)
+    response = stripe_event_handler(event)
     print('webhooks.py: Stage six')
     return response

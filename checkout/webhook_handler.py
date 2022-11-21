@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
 from .models import Booking, BookingLineItem
-from events.models import Event
+from events.models import Event as AcmeEvent
 
 import json
 import time
@@ -13,26 +13,28 @@ class StripeWH_Handler:
     def __init__(self, request):
         """ Assigns request as attribute of custom class """
         self.request = request
-        print('wh_handler.py: Stage 1')
+        print('wh_handler.py: __init__ method run')
 
-    def handle_stripe_event(self, stripe_event):
+    def handle_stripe_event(self, event):
         """ Handle a generic/unknown/unexpected webhook event """
-        print('wh_handler.py: Stage 2')
+        print('wh_handler.py: Generic/Unknown webhook encountered')
         return HttpResponse(
-            content=f'Unhandled webhook received: {stripe_event["type"]}',
+            content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
-    def handle_payment_intent_succeeded(self, stripe_event):
+    def handle_payment_intent_succeeded(self, event):
         """ Handle payment intent succeeded webhooks from Stripe """
-        intent = stripe_event.data.object
+        print('running handle_payment_intent_succeeded')
+        intent = event.data.object
+        print('intent variable theoretically identified')
         print(intent)
+        print('intent object should have been printed ABOVE THIS LINE')
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
 
-        billing_details = intent.charges.data[0].billing_details
-        shipping_details = intent.shipping
-        total = round(intent.charges.data[0].amount / 100, 2)
+        billing_details = intent.charges.data[0].billing_detailss
+        booking_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
@@ -58,7 +60,7 @@ class StripeWH_Handler:
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
-                    total=total,
+                    booking_total=total,
                     original_cart=cart,
                     stripe_pid=pid,
                 )
@@ -77,7 +79,7 @@ class StripeWH_Handler:
         if booking_exists:
             # return 200 response to Stripe
             return HttpResponse(
-                content=f'Webhook received: {stripe_event["type"]} | SUCCESS: \
+                content=f'Webhook received: {event["type"]} | SUCCESS: \
                     Verified booking exists in database.',
                 status=200)
         # if booking still doesn't exist, however,
@@ -105,7 +107,7 @@ class StripeWH_Handler:
                 # being sure to use the json.dumps cart, not session cart
                 # which may have expired due to browser closure
                 for item_id, item_data in json.loads(cart).items():
-                    event = Event.objects.get(id=item_id)
+                    event = AcmeEvent.objects.get(id=item_id)
                     booking_line_item = BookingLineItem(
                         booking=booking,
                         event=event,
@@ -119,17 +121,19 @@ class StripeWH_Handler:
                     booking.delete()
                 # and return status 500 to Stripe
                 return HttpResponse(
-                    content=f'Webhook received: {stripe_event["type"]} | ERROR\
+                    content=f'Webhook received: {event["type"]} | ERROR\
                         : {e}',
                     status=500)
         # if booking successfully created by webhook handler:
         return HttpResponse(
-            content=f'Webhook received: {stripe_event["type"]} | SUCCESS: \
+            content=f'Webhook received: {event["type"]} | SUCCESS: \
                 Created booking in webhook', status=200)
 
-    def handle_payment_intent_payment_failed(self, stripe_event):
+    def handle_payment_intent_payment_failed(self, event):
         """ Handle payment intent failed webhook from Stripe """
         print('wh_handler.py: Stage 4')
         return HttpResponse(
-            content=f'Webhook received: {stripe_event["type"]}',
+            content=f'Webhook received: {event["type"]}',
             status=200)
+
+    print('hello from webhook_handlery.py)')

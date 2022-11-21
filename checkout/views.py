@@ -21,6 +21,7 @@ def cache_checkout_data(request):
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
+            # Add following metadata:
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
@@ -85,15 +86,15 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
-            print('form data saved')
+            print('exited try/except block')
             request.session['save_info'] = 'save-info' in request.POST
-            print(5)
+            print('form data saved')
             return redirect(
                 reverse('checkout-success', args=[booking.booking_id]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-            print(6)
+            print('Stage 6: Error')
     else:
         checkout_form = CheckoutForm()
         template = 'checkout/checkout.html'

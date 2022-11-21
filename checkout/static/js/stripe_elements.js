@@ -118,6 +118,6 @@ form.addEventListener('submit', function(ev) {
     // If view sends back a 400 Bad Request response instead,
     // just reload the page, the error will be in django messages
     console.log('triggered: fail function in stripe_elements.js')
-    // location.reload();
+    location.reload();
 })
 });
