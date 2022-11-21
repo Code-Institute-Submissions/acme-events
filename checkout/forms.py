@@ -28,20 +28,21 @@ class CheckoutForm(forms.ModelForm):
             'city_or_town': 'City or Town',
             'postcode': 'Postal Code',
             'county': 'County',
-            'country': 'Country',
+            # 'country': 'Country',
         }
 
         self.fields['first_name'].widget.attrs['autofocus'] = True
         # place focus on first field (first_name)
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-                # Add asterisk to placeholder (field name)
-                # for all required fields
-            else:
-                placeholder = placeholders[field]
-                # Optional fields, use field name only as placeholder
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                    # Add asterisk to placeholder (field name)
+                    # for all required fields
+                else:
+                    placeholder = placeholders[field]
+                    # Optional fields, use field name only as placeholder
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             # Add class to each field for custom styling
             # see: checkout/static/checkout.css
