@@ -53,9 +53,27 @@ form.addEventListener('submit', function(ev) {
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
+    let saveInfo = Boolean($('#id-save-info').attr('checked'));
+    // Get value of checkbox by looking at its checked attr
+    let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    // From using {% csrf_token %} in the form
+    let postData = {
+        // This section, pulling in client_secret from the post
+        // reqest made by Stripe, corrects the 'intent' referenced
+        // before assignment error you may have had.
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    let url = '/checkout/cache_checkout_data/';
     let first_name = $.trim(form.first_name.value);
     let last_name = $.trim(form.last_name.value);
     let full_name = first_name.concat(" ", last_name);
+    $.post(url, postData).done(function () {
+    // jQuery: send 'postData' to url and only when 'done'
+    // proceed to the following (a callback function), but bear in
+    // mind that this callback function only runs if you receive a
+    // 200 OK response (see cache_checkout_data view):
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -71,28 +89,35 @@ form.addEventListener('submit', function(ev) {
                 state: $.trim(form.county.value),
             }
         }
-    }
+    },
     }).then(function(result) {
         if (result.error) {
             // In the event of an error:
-            var errorDiv = document.getElementById('card-errors');
-            var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
-            // Display error message
             $('#payment-form').fadeToggle(100);
             $('#loading-overlay').fadeToggle(100);
             // Uncover payment form
             card.update({ 'disabled': false});
             $('#submit-button').attr('disabled', false);
             // Re-eable card-details inputs and submit button
+            let errorDiv = document.getElementById('card-errors');
+            let html = `
+                <span class="icon" role="alert">
+                <i class="fas fa-times"></i>
+                </span>
+                <span>${result.error.message}</span>`;
+            $(errorDiv).html(html);
+            // Display error message
+            console.log(result.error.message)
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }
         }
     });
+}).fail(function () {
+    // If view sends back a 400 Bad Request response instead,
+    // just reload the page, the error will be in django messages
+    console.log('triggered: fail function in stripe_elements.js')
+    // location.reload();
+})
 });

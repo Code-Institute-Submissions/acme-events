@@ -2,6 +2,7 @@ from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
 from django.conf import settings
+from django.views.decorators.http import require_POST
 
 from events.models import Event
 from .models import Booking, BookingLineItem
@@ -12,11 +13,30 @@ import stripe
 import json
 
 
+@require_POST
+def cache_checkout_data(request):
+    """ Credit entirely to Code Institute's Boutique Ado project. """
+    try:
+        print('entered try block')
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
+
+
 def checkout(request):
     """ Render checkout page and/or handle checkout form """
 
     page_specific_title = 'Checkout'
-    print('stage 1')
+    print('checkout/views.py stage 1')
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
