@@ -49,7 +49,7 @@ class StripeWH_Handler:
             try:
                 # by matching the information in the Stripe intent
                 booking = Booking.objects.get(
-                    first_name__iexact=shipping_details.name,
+                    first_name__iexact=shipping_details.name.split()[0],
                     email__iexact=billing_details.email,
                     telephone__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
@@ -87,7 +87,8 @@ class StripeWH_Handler:
             try:
                 # using the data captured by Stripe
                 booking = Booking.objects.create(
-                    full_name=shipping_details.name,
+                    first_name=shipping_details.name.split()[0],
+                    last_name=shipping_details.name.split(1)[1],
                     email=billing_details.email,
                     telephone=shipping_details.phone,
                     country=shipping_details.address.country,
@@ -99,6 +100,8 @@ class StripeWH_Handler:
                     original_cart=cart,
                     stripe_pid=pid,
                 )
+                print(first_name)
+                print(last_name)
                 # being sure to use the json.dumps cart, not session cart
                 # which may have expired due to browser closure
                 for item_id, item_data in json.loads(cart).items():

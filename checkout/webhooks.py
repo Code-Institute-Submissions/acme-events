@@ -15,7 +15,7 @@ import stripe
 def webhook(request):
     """
     This code comes from Stripe with some modifications from
-    Boutique Ado. Consult ReadMe. This function is returned by
+    Boutique Ado. This function is returned by
     the 'wh/' path in checkout/urls.py Its purpose is to identify
     the type of event being sent by Stripe and then call the
     corresponding function from webhook_handler.py
