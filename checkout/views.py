@@ -65,6 +65,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             booking.stripe_pid = pid
             print('string info identified')
+            booking.original_cart = json.dumps(cart)
             booking.save()
             for item_id, item_data in cart.items():
                 try:
