@@ -2,6 +2,7 @@ import uuid
 from django.db.models import Sum
 from django.db import models
 
+from django_countries.fields import CountryField
 from events.models import Event
 
 
@@ -41,10 +42,10 @@ class Booking(models.Model):
         verbose_name=('Postcode'),
         max_length=15
         )
-    country = models.CharField(
-        verbose_name=('Country'),
-        max_length=100,
-        default="Ireland"
+    country = CountryField(
+        blank_label='Country *',
+        null=False,
+        blank=False
         )
     telephone = models.CharField(
         verbose_name=('Telephone'),
