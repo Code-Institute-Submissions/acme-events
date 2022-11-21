@@ -14,7 +14,7 @@ class LocationAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
 
     list_display = (
-        'name', 'location', 'start_date', 'start_time', 'published')
+        'id', 'name', 'location', 'start_date', 'start_time', 'published')
 
     ordering = ('start_date',)
 
