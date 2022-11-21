@@ -36,11 +36,6 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_detailss
         booking_total = round(intent.charges.data[0].amount / 100, 2)
 
-        # Clean data in the shipping details
-        for field, value in shipping_details.address.items():
-            if value == "":
-                shipping_details.address[field] = None
-
         # Begin with booking_exists as False
         booking_exists = False
         # Set attempt counter to 1
@@ -51,15 +46,15 @@ class StripeWH_Handler:
             try:
                 # by matching the information in the Stripe intent
                 booking = Booking.objects.get(
-                    first_name__iexact=shipping_details.name.split()[0],
+                    first_name__iexact=billing_details.name.split()[0],
                     email__iexact=billing_details.email,
-                    telephone__iexact=shipping_details.phone,
-                    country__iexact=shipping_details.address.country,
-                    postcode__iexact=shipping_details.address.postal_code,
-                    city_or_town__iexact=shipping_details.address.city,
-                    street_address1__iexact=shipping_details.address.line1,
-                    street_address2__iexact=shipping_details.address.line2,
-                    county__iexact=shipping_details.address.state,
+                    telephone__iexact=billing_details.phone,
+                    country__iexact=billing_details.address.country,
+                    postcode__iexact=billing_details.address.postal_code,
+                    city_or_town__iexact=billing_details.address.city,
+                    street_address1__iexact=billing_details.address.line1,
+                    street_address2__iexact=billing_details.address.line2,
+                    county__iexact=billing_details.address.state,
                     booking_total=total,
                     original_cart=cart,
                     stripe_pid=pid,
@@ -89,16 +84,16 @@ class StripeWH_Handler:
             try:
                 # using the data captured by Stripe
                 booking = Booking.objects.create(
-                    first_name=shipping_details.name.split()[0],
-                    last_name=shipping_details.name.split(1)[1],
+                    first_name=billing_details.name.split()[0],
+                    last_name=billing_details.name.split(1)[1],
                     email=billing_details.email,
-                    telephone=shipping_details.phone,
-                    country=shipping_details.address.country,
-                    postcode=shipping_details.address.postal_code,
-                    city_or_town=shipping_details.address.city,
-                    street_address1=shipping_details.address.line1,
-                    street_address2=shipping_details.address.line2,
-                    county=shipping_details.address.state,
+                    telephone=billing_details.phone,
+                    country=billing_details.address.country,
+                    postcode=billing_details.address.postal_code,
+                    city_or_town=billing_details.address.city,
+                    street_address1=billing_details.address.line1,
+                    street_address2=billing_details.address.line2,
+                    county=billing_details.address.state,
                     original_cart=cart,
                     stripe_pid=pid,
                 )
