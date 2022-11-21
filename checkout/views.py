@@ -115,6 +115,27 @@ def checkout(request):
                 currency=settings.STRIPE_CURRENCY,
             )
 
+    # Prefill checkout form with user's profile info, if any:
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                checkout_form = CheckoutForm(initial={
+                    'email': profile.user.email,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'city_or_town': profile.default_city_or_town,
+                    'county': profile.default_county,
+                    'postcode': profile.default_postcode,
+                    'country': profile.default_country,
+                    'telephone': profile.default_telephone,
+                })
+            except UserProfile.DoesNotExist:
+                # in case of no such profile:
+                checkout_form = CheckoutForm()
+        else:
+            # other/unforeseen cases:
+            checkout_form = CheckoutForm()
+
     if not stripe_public_key:
         messages.warning(request, 'Error: Contact developer/site owner and \
             quote this error message: Stripe public key missing from \
