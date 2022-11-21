@@ -4,6 +4,7 @@ from django.db import models
 
 from django_countries.fields import CountryField
 from events.models import Event
+from profiles.models import UserProfile
 
 
 class Booking(models.Model):
@@ -82,6 +83,11 @@ class Booking(models.Model):
         blank=False,
         default=''
         )
+    user_profile = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='bookings')
 
     def _create_booking_id(self):
         """
