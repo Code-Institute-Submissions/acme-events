@@ -28,7 +28,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Set DEBUG as True only where variable 'DEVELOPMENT' exists in environment:
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['acme-events.herokuapp.com', 'localhost']
 
