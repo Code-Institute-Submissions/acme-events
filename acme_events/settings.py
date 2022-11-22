@@ -176,6 +176,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # For Heroku, use AWS like so:
 if 'USE_AWS' in os.environ:
+
+    # Cache control // cache static files longterm for better user experience
+    # Directly from Code Institute's Boutique Ado Project
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
     # Bucket Config: Credentials obtained via S3 and Iam (AWS)
     # Create and configure bucket, create user group and policies,
     # create user and add to group. Credentials will be shown once
