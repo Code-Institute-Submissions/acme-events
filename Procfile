@@ -1,1 +1,1 @@
-web: gunicorn acme-events.wsgi:application
+web: gunicorn acme_events.wsgi:application
