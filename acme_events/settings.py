@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'profiles',
+    'storages',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -172,6 +173,33 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# For Heroku, use AWS like so:
+if 'USE_AWS' in os.environ:
+    # Bucket Config: Credentials obtained via S3 and Iam (AWS)
+    # Create and configure bucket, create user group and policies,
+    # create user and add to group. Credentials will be shown once
+    # and can be downloaded at the time but otherwise irretrievable(?)
+    AWS_STORAGE_BUCKET_NAME = 'acme-events'
+    AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    # Section depends on custom_storages.py file:
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+      # use custom_storages StaticStorage defined in custom_storages
+    STATICFILES_LOCATION = 'static'
+      # and save static files to folder named 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+      # as above but for media files
+    MEDIAFILES_LOCATION = 'media'
+    # On adding this info, you can remove DISABLE_COLLECT_STATIC key from env config vars
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
