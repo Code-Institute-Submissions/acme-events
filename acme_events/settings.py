@@ -30,7 +30,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['acme_events.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['acme-events.herokuapp.com', 'localhost']
 
 
 # Application definition
