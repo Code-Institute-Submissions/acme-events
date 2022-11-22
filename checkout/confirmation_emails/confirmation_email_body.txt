@@ -1,0 +1,16 @@
+Dear {{ booking.first_name }},
+
+This is a confirmation of your Acme Events booking. Your booking details are:
+
+Booking ID: {{ booking.booking_id }}
+Date of Booking: {{ booking.created_at }}
+Total: €{{ booking.booking_total }}
+
+Should we need to contact you in relation to your booking, the telephone number you have provided is {{ booking.telephone }}.
+
+If you have any questions or queries, please don't hesitate to contact us at {{ contact_email }}.
+
+
+Sincerely,
+
+Acme Events Ltd.

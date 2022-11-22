@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from .models import Booking, BookingLineItem
 from events.models import Event as AcmeEvent
@@ -15,6 +17,23 @@ class StripeWH_Handler:
         """ Assigns request as attribute of custom class """
         self.request = request
         print('wh_handler.py: __init__ method run')
+
+    def _send_confirmation_email(self, booking):
+        """Send post-booking confirmation email to user """
+        customer_email = booking.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'booking': booking})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'booking': booking, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        )        
 
     def handle_stripe_event(self, event):
         """ Handle a generic/unknown/unexpected webhook event """
@@ -92,7 +111,9 @@ class StripeWH_Handler:
         # loop ends here; repeat or move on
         # if booking_exists is true by this time
         if booking_exists:
-            # return 200 response to Stripe
+            # send confirmation email:
+            self._send_confirmation_email(booking)
+            # and return 200 response to Stripe
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: \
                     Verified booking exists in database.',
@@ -140,7 +161,9 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR\
                         : {e}',
                     status=500)
-        # if booking successfully created by webhook handler:
+        # if booking successfully created by webhook handler,
+        # send confirmation email and return 200 to Stripe:
+        self._send_confirmation_email(booking)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: \
                 Created booking in webhook', status=200)
