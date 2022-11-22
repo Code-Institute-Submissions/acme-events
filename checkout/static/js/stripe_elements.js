@@ -58,9 +58,6 @@ form.addEventListener('submit', function(ev) {
     let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     // From using {% csrf_token %} in the form
     let postData = {
-        // This section, pulling in client_secret from the post
-        // reqest made by Stripe, corrects the 'intent' referenced
-        // before assignment error you may have had.
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,

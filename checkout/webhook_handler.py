@@ -2,6 +2,7 @@ from django.http import HttpResponse
 
 from .models import Booking, BookingLineItem
 from events.models import Event as AcmeEvent
+from profiles.models import UserProfile
 
 import json
 import time
@@ -36,8 +37,27 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_detailss
         booking_total = round(intent.charges.data[0].amount / 100, 2)
 
+        # Profile handling logic:
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            # Update profile information when save_info is checked
+            # by extracting info from payment intent metadata 
+            if save_info:
+                profile.default_telehpone = billing_details.phone
+                profile.default_street_address1 = billing_details.address.line1
+                profile.default_street_address2 = billing_details.address.line2
+                profile.default_city_or_town = billing_details.address.city
+                profile.default_county = billing_details.address.state
+                profile.default_postcode = billing_details.address.postal_code
+                profile.default_country = billing_details.address.country
+                profile.save()
+
+
         # Begin with booking_exists as False
         booking_exists = False
+        
         # Set attempt counter to 1
         attempt = 1
         # While attempt is <= 5
@@ -86,6 +106,7 @@ class StripeWH_Handler:
                 booking = Booking.objects.create(
                     first_name=billing_details.name.split()[0],
                     last_name=billing_details.name.split(1)[1],
+                    user_profile=profile,
                     email=billing_details.email,
                     telephone=billing_details.phone,
                     country=billing_details.address.country,
