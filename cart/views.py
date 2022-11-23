@@ -44,7 +44,7 @@ def amend_cart(request, event_id):
 
     if quantity > 0:
         cart[event_id] = quantity
-        messages.success(request, f'Quantity updated successfully.')
+        messages.success(request, 'Quantity updated successfully.')
     else:
         cart.pop(event_id)
         messages.success(request, f'Removed {event.name} from your cart.')

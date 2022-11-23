@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import Booking, BookingLineItem
 from events.models import Event as AcmeEvent
@@ -62,7 +63,7 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             # Update profile information when save_info is checked
-            # by extracting info from payment intent metadata 
+            # by extracting info from payment intent metadata
             if save_info:
                 profile.default_telehpone = billing_details.phone
                 profile.default_street_address1 = billing_details.address.line1
@@ -73,10 +74,9 @@ class StripeWH_Handler:
                 profile.default_country = billing_details.address.country
                 profile.save()
 
-
         # Begin with booking_exists as False
         booking_exists = False
-        
+
         # Set attempt counter to 1
         attempt = 1
         # While attempt is <= 5

@@ -197,11 +197,11 @@ if 'USE_AWS' in os.environ:
     # Static and media files
     # Section depends on custom_storages.py file:
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-      # use custom_storages StaticStorage defined in custom_storages
+    # use custom_storages StaticStorage defined in custom_storages
     STATICFILES_LOCATION = 'static'
-      # and save static files to folder named 'static'
+    # and save static files to folder named 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-      # as above but for media files
+    # as above but for media files
     MEDIAFILES_LOCATION = 'media'
     # On adding this info, you can remove DISABLE_COLLECT_STATIC key from env config vars
 
