@@ -35,20 +35,16 @@ def webhook(request):
         print('entered try block')
         event = stripe.Webhook.construct_event(
             payload, sig_header, wh_secret
-            # wh_secret changed from sample code variable name
         )
         print('exiting block')
     except ValueError as e:
         # Invalid payload
-        print('invalid payload')
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
-        print('invalid signature')
         return HttpResponse(status=400)
     except Exception as e:
         # Generic exception handler
-        print('other exception')
         return HttpResponse(content=e, status=400)
 
     # Set up webhook handler by creating an instance
