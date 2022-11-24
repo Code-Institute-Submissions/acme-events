@@ -171,6 +171,13 @@ hr {
     font-size: 1rem;
 }
 
+#locations-list ul li {
+    list-style: none;
+    color: #fff;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
 #mailchimp-credit {
     max-height: 1.5rem;
 }

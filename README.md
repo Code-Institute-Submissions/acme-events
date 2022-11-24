@@ -24,7 +24,19 @@ Third-party platforms to meet this need are in no shortage; however, a percentag
 
 Ideally therefore, an event company would have its own native booking system with integrated payment through a secure, reputable payment processing service. Such a system would not take the consumer-user away from the site and would allow them to make multiple bookings, even across multiple events, without leaving the site.
 
-While many future features may yet be implemented, Acme Events demonstrates this solution in practice.
+While many future features may yet be implemented, Acme Events demonstrates this solution in practice.  
+  
+For an events company, localised reach and customer retention are both vital and often in competition if not well managed. This is a function of staging events in multiple locations within a broader geographical region; in short, a customer may be interested only in events which take place locally to them and these may occur only sporadically.
+
+Digital marketing tools can accomodate this, however, if mismanaged, these same tools can quickly become redundant. Mailchimp provides audience "Groups" which can be used to divide audiences by self-selected criteria, such as interests or geographical region. This allows the site owner to target specific subsections of their subscriber base ("segments" of their Mailchimp "audience") when issuing a newsletter, ensuring each newsletter is best suited to reach its target audience.
+  
+As a result, newsletters receive greater engagement and higher open and click-through rates, resulting in greater customer retention. Additionally, as well-targetted emails are less likely to be misreported as spam, the sender benefits from higher send-success rates, equally resulting in greater engagement. Although "Acme Events" is not operational in any region, the mechanics for this strategy are in place within the newsletter subscribe form in the site's footer. Here, subscribers can self-sort according to their interest in "Region 1", "Region 2" or "All Regions".
+  
+Social media's advance audience targetting can also be of benefit, allowing an events company to maintain a global presence on the internet and yet appeal to local audiences when advertising. Facebook Adverts, for instance, allows the advertiser to define a geographical region for users to which a particular advert should be shown. Combined with other factors, this increases the likelihood of engagement and interaction, as well as social sharing, while ensuring maximum cost-effectiveness. The other factors that might be used in social media advertisement include demographic and interest-based information, allowing the company to target users belonging to demographics considered more affluent or in possession of greater disposable income, for instance, as well as targetting specific interests and even professions. Given the variation in how this user information is often expressed, keywords used in social media marketting may show significant overlap, for example, "blacksmith", "blacksmithing", "metal work" "metalworking", "metalwork" and so on.  
+  
+For many platforms, a sense of engagement is also required in addition to paid advertising and can generate greater interest and enthusiasm. This involves creating original content likely to be of interest to the target audience. In our example case, that might range from blacksmithing tips and demonstrations to quickly-consumed and highly shareable humorous GIFs, videos and/or memes of Warner Bros. content featuring anvils. Although this does not come with a direct financial cost, a significant investment of time is required this should be borne in mind as a form of cost. Therefore, attempting to leverage social media purely as "free" advertising may be a false economy for many businesses. For Acme Events, some degree of paid advertising would be used in conjuction with content creation.  
+  
+As a small business, Google Ads is not considered the first priority for Acme Events but this will be revised as the business grows.  
   
 ## User Stories  
   **Types of User** 
@@ -44,13 +56,14 @@ While many future features may yet be implemented, Acme Events demonstrates this
   + Build a client contact database directly from my website using the integrated newsletter sign-up form.  
   + Access a receipt for each customer transaction through the Stripe dashboard.  
   + Benefit from validation methods around user account creation and newsletter sign-ups to reduce bot signups.  
+  + Leverage newsletter signups with self-selecting "Groups" for maximum audience retention.  
   
 **As a browsing-user, I can...** 
   + View key information concerning upcoming events at a glance (e.g. location, time, date, etc.) 
   + Easily browse this list of events in chronological order, without the confusion or distraction that might be caused by also seeing expired events.  
   + View more detailed information about a specific event that interests me.  
   + Share a specific event on social media or elsewhere with its dedicated link, for example, if I wish to invite a friend (event-detail view).  
-  + Sign up to a newsletter if I wish to remain informed about upcoming events or the company in general.  
+  + Sign up to a newsletter if I wish to remain informed about upcoming events in a given region or all regions, as well as general announcments and other information.  
   + Create an account to save time at checkout if ever I become a consumer-user.  
   + View the website's privacy policy in a new tab.  
   + Access information about event venues, such as contact details and address.  
@@ -166,7 +179,7 @@ To aid the user in navigating the site, the checkout page is not accessible when
 To prevent accidentaly sign out, confirmation is required before signing out.  
   
 ### Newsletter Sign Up  
-The site features a newsletter sign up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maxmimum convenience to the site owner or marketing team.  
+The site features a newsletter sign up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maxmimum convenience to the site owner or marketing team. Users can self-select a "group" according to their interests, allowing them to receive less frequent and more targetted emails of genuine interest and relevance to them.  
   
 ### Additional Features
 In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.  
@@ -177,6 +190,8 @@ To reduce resource-wasting and potentially harmful bot traffic, the site's admin
 In addition to the features mentioned above (capacity handling and multi-day events), the site could make use of a package such as [qrcode](https://pypi.org/project/qrcode/) to turn booking IDs into QR Codes. These could be incorporated into post-sales emails as well as being displayed on the post-purchase checkout-success page and the My Bookings history section.  
   
 Some aspects of the UI could be expanded to provide a more polished UX, notably the post-purchase checkout-success page which could include a detailed purchase summary.
+  
+## Testing  - INCOMPLETE  
 
 ## Deployment  
 <details><summary>
