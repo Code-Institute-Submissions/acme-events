@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row pt-4">
         <div class="col-12 col-lg-4">
-            <h2 class="text-muted">Account Detail</h2>
+            <h2 class="text-muted">Account Details</h2>
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}

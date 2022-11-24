@@ -18,11 +18,8 @@
             {% for item in cart_items %}
             <div class="row">
                 <div class="col-3 my-1">
-                    {% if item.event_image %}
-                    <img class="w-100" src="" alt="{{ item.event.name }}">
-                    {% else %}
-                    <!-- backup-placeholder image -->
-                    <img class="w-100" src="" alt="{{ item.event.name }}">
+                    {% if item.event.featured_image %}
+                    <img class="w-50" src="{{ item.event.featured_image.url }}" alt="{{ item.event.name }}">
                     {% endif %}
                 </div>
                 <div class="col-9">
