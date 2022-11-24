@@ -138,6 +138,17 @@ Login is required in order to view the "My Bookings" section as each iteration o
   
 At the time of account creation, email verification is required, thereby reducing malicious behaviours such as bot sign-ups which would otherwise unecessarily increase the burden on the site and its storage costs.  
   
+### Events  
+One of the site's primary functions is simply to display event information. It does this in two ways, firstly with a chronological overview of events and secondly with a more detailed event-specific page for each event the site-owner has marked "published" and which is not yet expired.  
+  
+Events that have expired (ie. are now in the past) are not rendered but remain in the database for the admin's records. Events that are not marked "published" by the admin exist in the database but are not rendered for the user to see and this allows the admin to draft events wihout making them public, easing their workload.  
+  
+Events are linked to Locations (ie. venues), so that a company that hosts events in many of the same venues repeatedly does not have to re-enter location or venue information each time but can simply select the Location to use from the existing records. New Locations can also be added, as well being updated or deleted entirely as needed.  
+  
+In addition to location information, event data can include time and date information, short and long descriptions, and images. If an event lacks a featured image for any reason, a placeholder image will automatically be rendered instead. This is also true for the featured image associated with a Location.  
+  
+Events also feature a capacity variable, although this is not currently in use within the site but could be readily developed as a future feature. Likewise, an end_date variable exists which would be integrated into the site's logic to accomodate multi-day events, however, this would also be a future feature and is not currently in use within the site.  
+    
 ### Additional Features
 In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.  
   
