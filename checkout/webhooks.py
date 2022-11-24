@@ -54,8 +54,11 @@ def webhook(request):
 
     # Map webhook events to relevant handler
     event_map = {
-        # 'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
-        'charge.succeeded': handler.handle_payment_intent_succeeded,
+        # Bug: payment_intent.succeeded returns error 500 in Stripe:
+        # If replaced (e.g. with 'charge.succeeded': handler.handle_payment_intent_succeeded,)
+        # will then be handled by generic handler and the new event (e.g. charge.succeeded)
+        # will return error 500 instead.
+        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
     }
     print('webhooks.py: Stage three')

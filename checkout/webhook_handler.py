@@ -45,25 +45,13 @@ class StripeWH_Handler:
 
     def handle_payment_intent_succeeded(self, event):
         """ Handle payment intent succeeded webhooks from Stripe """
-        print('running handle_payment_intent_succeeded')
         intent = event.data.object
-        print('intent variable theoretically identified')
-        print(intent)
-        print('intent object should have been printed ABOVE THIS LINE')
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
 
-        # NEW: Get the Charge object
-        stripe_charge = stripe.Charge.retrieve(
-            intent.latest_charge
-        )
-        billing_details = stripe_charge.billing_details
-        shipping_details = intent.shipping
-        booking_total = round(stripe_charge.amount / 100, 2)
-        # OLD:
-        # billing_details = intent.charges.data[0].billing_details
-        # booking_total = round(intent.charges.data[0].amount / 100, 2)
+        billing_details = intent.charges.data[0].billing_details
+        booking_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Profile handling logic:
         profile = None
