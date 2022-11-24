@@ -17,5 +17,6 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+# See .views and docs at: https://docs.djangoproject.com/en/4.1/ref/urls/
 handler404 = 'acme_events.views.handler404'
 handler500 = 'acme_events.views.handler500'
