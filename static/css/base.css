@@ -149,6 +149,19 @@ hr {
     z-index: 1;
 }
 
+
+ /* ====== Newsletter Signup ======  */
+#mc-embedded-subscribe-form {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#mc-embedded-subscribe {
+    margin: 0 auto !important;
+    line-height: 140%;
+    font-size: 1rem;
+}
+
  /* ====== Media Queries ======  */
 
  @media (max-width: 768px) {
