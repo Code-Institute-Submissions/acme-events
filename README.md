@@ -149,6 +149,11 @@ In addition to location information, event data can include time and date inform
   
 Events also feature a capacity variable, although this is not currently in use within the site but could be readily developed as a future feature. Likewise, an end_date variable exists which would be integrated into the site's logic to accomodate multi-day events, however, this would also be a future feature and is not currently in use within the site.  
     
+### Online Transactions  
+The other core component of the site is its ability to act as an e-commerce platform, allowing users to make the leap from browsing to purchasing with relative ease and at the moment of peak interest in the event(s) in question.
+
+Bookings can be make for one or more events, and customers can book for one or more persons (ie. multiple tickets). Payments are processed by Stripe through the integrated payment form. This naturally requires the site owner to have a Stripe account, and naturally, a small percentage of the transaction will be paid over to Stripe in the form of fees. This is all handled automatically and Stripe issues invoices and suitable tax documents for business owners at regular intervals, making the administration burden of e-commerce in this form reasonably low and the costs always significanly lower than the revenue gained.  
+  
 ### Additional Features
 In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.  
   
