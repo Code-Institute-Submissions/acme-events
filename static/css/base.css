@@ -45,6 +45,10 @@ background-color: var(--accent-color2);
     text-decoration-color: var(--accent-color1);
  }
 
+ a.link-on-black {
+    color: var(--accent-color1);
+ }
+
  /* ====== Navigation ======  */
 
 .custom-toggler .navbar-toggler-icon {
