@@ -134,6 +134,11 @@ hr {
     height: 1px;
   }
 
+.venue-image {
+    max-height: 50vh;
+    width:auto;
+}
+
 #venue-table {
     border-top: 2px solid var(--accent-color1);
 }

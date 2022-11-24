@@ -7,7 +7,7 @@ class Location(models.Model):
     venue_image = models.ImageField(
         blank=True, null=True,
         upload_to='venue_images',
-        default='placeholder_anvil.jpeg'
+        default='Warner_Bros_logo.png'
         )
     street_address1 = models.CharField(max_length=150)
     street_address2 = models.CharField(max_length=150, blank=True, null=True)
