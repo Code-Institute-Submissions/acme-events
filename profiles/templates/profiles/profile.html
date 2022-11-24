@@ -42,7 +42,7 @@
                                     </a>
                                 </td>
                                 <td colspan="2">{{ booking.created_at.date }}</td>
-                                <td>${{ booking.booking_total }}</td>
+                                <td>€{{ booking.booking_total }}</td>
                             </tr>
                                 {% for item in booking.lineitems.all %}
                                 <tr>
