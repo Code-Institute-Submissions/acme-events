@@ -67,7 +67,52 @@ While many future features may yet be implemented, Acme Events demonstrates this
   + Update my default information at checkout or within the "My Bookings" profile section of the site.  
   + Receive realtime feedback about any errors in my input, such as form errors or erroneous card details.  
 
-These functions should also be available to users employing a screen reader. See [Accessibility Testing](#accessibility-testing).
+These functions should also be available to users employing a screen reader. See [Accessibility Testing](#accessibility-testing).  
+  
+## Tech Stack  
+1. Languages
+  + HTML
+  + CSS
+  + Javascript
+  + Python (current runtime: 3.8.15)
+  + Django's Template Language
+
+2. Libraries & Frameworks
+  + Django 3.2
+  + Bootstrap 4
+  + jQuery
+  + Popper JS
+  + FontAwesome Icons
+ 
+3. Additional Tools/Stacks
+  + Balsamiq
+  + Google Fonts
+  + Heroku 20
+
+ 4. Dependencies
+  + asgiref==3.5.2
+  + backports.zoneinfo==0.2.1
+  + boto3==1.26.15
+  + botocore==1.29.15
+  + dj-database-url==1.0.0
+  + Django==4.1.2
+  + django-allauth==0.51.0
+  + django-countries==7.2.1
+  + django-crispy-forms==1.14.0
+  + django-storages==1.13.1
+  + gunicorn==20.1.0
+  + jmespath==1.0.1
+  + oauthlib==3.2.1
+  + Pillow==9.2.0
+  + psycopg2==2.9.5
+  + PyJWT==2.5.0
+  + python3-openid==3.2.0
+  + requests-oauthlib==1.3.1
+  + s3transfer==0.6.0
+  + sqlparse==0.4.3
+  + stripe==4.2.0
+  + types-cryptography==3.3.23
+
 
 
 # Credits:
