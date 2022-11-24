@@ -54,8 +54,16 @@ class StripeWH_Handler:
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
 
-        billing_details = intent.charges.data[0].billing_details
-        booking_total = round(intent.charges.data[0].amount / 100, 2)
+        # NEW: Get the Charge object
+        stripe_charge = stripe.Charge.retrieve(
+            intent.latest_charge
+        )
+        billing_details = stripe_charge.billing_details
+        shipping_details = intent.shipping
+        booking_total = round(stripe_charge.amount / 100, 2)
+        # OLD:
+        # billing_details = intent.charges.data[0].billing_details
+        # booking_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Profile handling logic:
         profile = None
