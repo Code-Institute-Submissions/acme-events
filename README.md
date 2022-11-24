@@ -159,7 +159,11 @@ From the customer's perspective, this is a simple and convenient process with a 
 ### Error Handling and Feedback  
 The site includes error handling that aids the user rather than causing alarm or frustration. This includes card errors, form validation, custom error 404 and 500 pages and concenient feedback in small, self-dismissing notifications.  
   
-Feedback also extends to a small icon in the shopping card icon visible on larger screens, presenting the number of items, if any, in the user's cart.
+Feedback also extends to a small icon in the shopping card icon visible on larger screens, presenting the number of items, if any, in the user's cart.  
+  
+To aid the user in navigating the site, the checkout page is not accessible when the user's cart is empty and instead, the user is redirected to the Events page with a notification informing them that their cart is currently empty. The checkout-succeess page is only assessible with suitable parameters and visiting the url `/checkout-success` with no additional parameters results in a 404 page with a prompt to return home.  
+  
+To prevent accidentaly sign out, confirmation is required before signing out.  
   
 ### Newsletter Sign Up  
 The site features a newsletter sign up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maxmimum convenience to the site owner or marketing team.  
