@@ -145,9 +145,13 @@ The diagram below demonstrates the relationships between the project's models (d
 
 Acme Events is fully responsive and can be enjoyed on a wide range of devices. The site and its content will adapt to create the best user experience.  
   
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-events-list-mobile.png" alt="Event list as rendered on a small mobile screen of 320px width" width="50%" height="auto">
+  
 ### Accounts  
   
 Users can create an account to store default checkout information as well as a history of their bookings. This latter point is useful both in terms of record-keeping and as a convenient means to access one's booking information upon arrival at an event. Default information can be saved at the time of checkout and this can then be overwritten during subsequent checkouts should the information need to be updated. Equally, the information can be updated from the "My Bookings" section without needing to checkout.  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-herokuapp-profile.png" alt="The profile section of the site visible to a logged-in user" width="75%" height="auto">
   
 Login is required in order to view the "My Bookings" section as each iteration of this page is specific to one account. Similarly, user authentication ensures that only appropriate pages and options are shown to users according to their logged-in status and role.  
   
@@ -158,7 +162,11 @@ At the time of account creation, email verification is required, thereby reducin
 ### Events  
 One of the site's primary functions is simply to display event information. It does this in two ways, firstly with a chronological overview of events and secondly with a more detailed event-specific page for each event the site-owner has marked "published" and which is not yet expired.  
   
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-detail-mobile.png" alt="Event detail view as rendered on a small mobile screen of a desktop" width="50%" height="auto">
+  
 Events that have expired (ie. are now in the past) are not rendered but remain in the database for the admin's records. Events that are not marked "published" by the admin exist in the database but are not rendered for the user to see and this allows the admin to draft events wihout making them public, easing their workload.  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-events-list.png" alt="The website's events list showing two events, one with an automatically-added placeholder image and one with an admin-selected image" width="75%" height="auto">
   
 Events are linked to Locations (ie. venues), so that a company that hosts events in many of the same venues repeatedly does not have to re-enter location or venue information each time but can simply select the Location to use from the existing records. New Locations can also be added, as well being updated or deleted entirely as needed.  
   
@@ -239,5 +247,7 @@ In addition, the implementation of webhooks within the site contains within it a
   
 # Credits:
 - Hero Image (anvil) <a href="https://www.freepik.com/free-photo/close-up-photo-shoot-hammer-anvil-dark-smith-workshop_24917063.htm#query=anvil&position=1&from_view=search&track=sph">by fxquadro on Freepik</a>.  
+- Event photo by igovar igovar [via Pexels](https://www.pexels.com/photo/)crop-man-forging-metal-in-smithy-4575137/
 - Helpful article on Django slugs <a href="https://learndjango.com/tutorials/django-slug-tutorial">from Learn Django</a>.  
+
 <!-- - <a target="_blank" href="https://icons8.com/icon/77797/metal">Site Favicon: "Metal"</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
