@@ -5,7 +5,10 @@ class Location(models.Model):
     """ Locations for events """
     venue_name = models.CharField(max_length=250)
     venue_image = models.ImageField(
-        blank=True, null=True, upload_to='venue_images')
+        blank=True, null=True,
+        upload_to='venue_images',
+        default='placeholder_anvil.jpeg'
+        )
     street_address1 = models.CharField(max_length=150)
     street_address2 = models.CharField(max_length=150, blank=True, null=True)
     city_or_town = models.CharField(max_length=150)
@@ -32,7 +35,7 @@ class Event(models.Model):
     )
     featured_image = models.ImageField(
         blank=True, null=True,
-        upload_to='event_images', default='placeholder_anvil_9KRsiCg'
+        upload_to='event_images', default='placeholder_anvil.jpeg'
     )
     short_description = models.TextField()
     long_description = models.TextField()

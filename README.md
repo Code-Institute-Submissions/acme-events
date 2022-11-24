@@ -1,5 +1,4 @@
-- improve navigation styling
-- continue to develop event-list page
+
 
 
 
