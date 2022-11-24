@@ -178,7 +178,40 @@ In addition to the features mentioned above (capacity handling and multi-day eve
   
 Some aspects of the UI could be expanded to provide a more polished UX, notably the post-purchase checkout-success page which could include a detailed purchase summary.
 
+## Deployment  
+<details><summary>
+Click to Expand: Deployment Procedure
+</summary></br>  
+  
+### Heroku  
+The site was deployed to Heroku using the following procedure. Before beginning, ensure that requirements.txt is up to date. Similarly, ensure that ``DEBUG = False` in settings.py or that `DEBUG` is appropriately handled with a control flow that ensures it is only `True` in the local development environment.
+  
+1. An account was created on [Heroku.com](https://www.heroku.com/)  
+2. Once logged in, select "Create new app".  
+3. The app must then be given a unique name and the developer's region must be selected from a list of options.  
+4. From the Settings tab of the next screen, select "Reveal config vars".  
+5. A database url, port and secret key are required config vars which can be added in the Heroku project settings.  
+6. An AWS access key and secret key (django) are also required to use the site in its current configuration, while a `USE_AWS` key can be set to `True` for the deployed version of the site.  
+7. In addition, you may wish to make use of the email settings which require DEFAULT_FROM_EMAIL, EMAIL_HOST_PASS and EMAIL_HOST_USER keys to be set.  
+8. You will need a `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY` and `STRIPE_WH_SECRET` key.
+9. Within the deploy section, select GitHub as the deployment method and authorise.
+10. Input the name of the GitHub repository and click "Search", followed by "Connect".  
+11. Choose either "Automatic deploys" or "Manual deploy". In this case, the developer opted for manual deploy for the initial deployment and, having verified that deployment was successful, enabled automatic deploys thereafter.  
+12. Select the appropriate branch from which to deploy (in this case, the project had only the Main branch at the time of deployment).  
+13. As a portfolio project, this application exists on Heroku's newly founded Eco Dynos and uses [ElephantSQL](https://elephantsql.com/) for its database.
 
+  
+### Forking & Cloning Repositories  
+Forking a repository allows one to make a copy with which to experiment without affecting or jeopardising the original. This does not require any special permissions from or direct contact with the original developer provided the repository in question is public rather than private. You may wish to do this either to experiment with and learn from another party's code or aid in improving an open-source project by offering changes (note that forking is distinct from [branching](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)). To do this, one must have a GitHub account and be logged in. Then, simply visit the main page of the repository in question, and select the "Fork" option located in the upper-right corner (desktop) as shown in the image below. [Learn more about forks from GitHub Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).  
+
+Forking a repository does not create locally-stored copies of its files on your computer. To achieve this, you will also need to Clone the repository. For example, you may wish to do this if you wish to have a functioning copy of another party's code in under to compile and execute it locally. Cloning options are found under the "Code" drop-down button of a repository's main page, as shown in the image below. [Learn more about cloning from GitHub Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).  
+</details>  
+  
+## Known Bugs  
+At the time of writing, the site's webhook's feature is not fully operation. Once operational, this feature will allow bookings to be reconsituted from the data sent to Stripe when processing the payment, should the checkout form itself fail to submit to the site for any reason (for example, premature broswer closure resulting a charge being processed but no booking being created within the site's database). As a failsafe measure ensuring quality customer experience, the site should not ideally be deployed without resolving this issue, at least in the opinion of the developer.  
+  
+In addition, the implementation of webhooks within the site contains within it a mechanism to send post-purchase confirmation emails. At present, this feature is not operational as it is affected by the webhooks bug.  
+  
 # Credits:
 - Hero Image (anvil) <a href="https://www.freepik.com/free-photo/close-up-photo-shoot-hammer-anvil-dark-smith-workshop_24917063.htm#query=anvil&position=1&from_view=search&track=sph">by fxquadro on Freepik</a>.  
 - Helpful article on Django slugs <a href="https://learndjango.com/tutorials/django-slug-tutorial">from Learn Django</a>.  
