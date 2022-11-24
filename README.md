@@ -43,6 +43,7 @@ While many future features may yet be implemented, Acme Events demonstrates this
   + Provide contact information for venues to reduce queries from users that would be more appropriately directed to the venue than the event organiser.  
   + Build a client contact database directly from my website using the integrated newsletter sign-up form.  
   + Access a receipt for each customer transaction through the Stripe dashboard.  
+  + Benefit from validation methods around user account creation and newsletter sign-ups to reduce bot signups.  
   
 **As a browsing-user, I can...** 
   + View key information concerning upcoming events at a glance (e.g. location, time, date, etc.) 
@@ -112,6 +113,29 @@ These functions should also be available to users employing a screen reader. See
   + sqlparse==0.4.3
   + stripe==4.2.0
   + types-cryptography==3.3.23
+  
+## Design Statement     - INCOMPLETE
+The site relies on strong contrast between its dark and light components for visual impact. Many standard UI components will already be familiar to the majority of user's and there is minimal learning curve for the browsing- or consumer- users.  
+
+Bootstrap 4 was chosen, over Bootstrap 5, for use with jQuery and support IE 10 and 11.
+  
+Wireframe sketches were drawn up in Balsamiq. These reflect basic layout considerations rather than aesthetics.
+
+### Database Structure   - INCOMPLETE
+The diagram below demonstrates the relationships between the project's models (database tables).  
+  
+## Features  
+  
+### Responsive Design
+
+Acme Events is fully responsive and can be enjoyed on a wide range of devices. The site and its content will adapt to create the best user experience.  
+  
+### Accounts  
+  
+Users can create an account to store default checkout information as well as a history of their bookings. This latter point is useful both in terms of record-keeping and as a convenient means to access one's booking information upon arrival at an event. Default information can be saved at the time of checkout and this can then be overwritten during subsequent checkouts should the information need to be updated. Equally, the information can be updated from the "My Bookings" section without needing to checkout.  
+  
+At the time of account creation, email verification is required, thereby reducing malicious behaviours such as bot sign-ups which would otherwise unecessarily increase the burden on the site and its storage costs.  
+  
 
 
 
