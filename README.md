@@ -3,7 +3,9 @@
 
 An anvil is a blacksmithing tool more familiar to many as the heavy object often dropped on cartoon characters and made famous in this regard by Warner Brothers' Looney Tunes animations. Like almost all products within these Warner Bros. productions, anvils often bore a manufacturer's mark crediting them to ["Acme Corp."](https://en.wikipedia.org/wiki/Acme_Corporation). The ficticious corporation has since become a standin or placeholder wherever a fake company is needed and is even used in some jurisdictions Law Schools Admissions Tests as the plaintiff or defendent in example cases.
 
-For the purely fictional business represented by this portfolio project, therefore, the company in question is "Acme Events". As the products showcased at the events do not matter and the purpose of the site is to demonstrate an online booking system for an events company, anvils were chosen as a humorous stand-in.
+For the purely fictional business represented by this portfolio project, therefore, the company in question is "Acme Events". As the products showcased at the events do not matter and the purpose of the site is to demonstrate an online booking system for an events company, anvils were chosen as a humorous stand-in.  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-landing.png" alt="Acme Events Home or Landing page" width="75%" height="auto">
   
 ## Contents
 1. [Problem Statement](#problem-statement)  
@@ -183,6 +185,8 @@ From the customer's perspective, this is a simple and convenient process with a 
 
 ### Error Handling and Feedback  
 The site includes error handling that aids the user rather than causing alarm or frustration. This includes card errors, form validation, custom error 404 and 500 pages and concenient feedback in small, self-dismissing notifications.  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-500.png" alt="Custom Error 500 page" width="75%" height="auto">
   
 Feedback also extends to a small icon in the shopping card icon visible on larger screens, presenting the number of items, if any, in the user's cart.  
   
