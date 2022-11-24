@@ -9,7 +9,7 @@ def handler404(request, exception):
     return render(request, "errors/404.html", status=404)
 
 
-def handler500(request, exception):
+def handler500(request):
     """
     Error Handler 500 - Internal Server Error
     Docs: https://docs.djangoproject.com/en/4.1/ref/urls/#handler500
