@@ -151,6 +151,8 @@ Users can create an account to store default checkout information as well as a h
   
 Login is required in order to view the "My Bookings" section as each iteration of this page is specific to one account. Similarly, user authentication ensures that only appropriate pages and options are shown to users according to their logged-in status and role.  
   
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-sign-in.png" alt="Sign in page" width="75%" height="auto">
+  
 At the time of account creation, email verification is required, thereby reducing malicious behaviours such as bot sign-ups which would otherwise unecessarily increase the burden on the site and its storage costs.  
   
 ### Events  
@@ -178,10 +180,16 @@ Feedback also extends to a small icon in the shopping card icon visible on large
   
 To aid the user in navigating the site, the checkout page is not accessible when the user's cart is empty and instead, the user is redirected to the Events page with a notification informing them that their cart is currently empty. The checkout-succeess page is only assessible with suitable parameters and visiting the url `/checkout-success` with no additional parameters results in a 404 page with a prompt to return home.  
   
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-no-items-in-cart.png" alt="Feeback informing user there are not items in their cart" width="25%" height="auto">
+  
 To prevent accidentaly sign out, confirmation is required before signing out.  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-sign-out.png" alt="Sign out confirmation page" width="75%" height="auto">
   
 ### Newsletter Sign Up  
 The site features a newsletter sign up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maxmimum convenience to the site owner or marketing team. Users can self-select a "group" according to their interests, allowing them to receive less frequent and more targetted emails of genuine interest and relevance to them.  
+
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-footer.png" alt="Newsletter sign-up form as presented in the site footer" width="75%" height="auto">
   
 ### Additional Features
 In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.  
