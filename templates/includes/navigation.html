@@ -10,27 +10,23 @@
         </button>
         <!-- Nav Items -->
         <div class="collapse navbar-collapse px-0 mx-0" id="navLinks">
-            <ul class="navbar-nav ml-auto text-right px-0">
+            <ul class="navbar-nav ml-auto text-right px-3">
                 {% if template_name != 'index' %}
-                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-3 m-0 px-md-1">Home</a></li>
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-4 m-0 px-md-1">Home</a></li>
                 {% endif %}
-                <li class="nav-item"><a href="{% url 'event_list' %}" class="nav-link px-3 m-0 px-md-1">Events</a></li>
+                <li class="nav-item"><a href="{% url 'event_list' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-ticket-alt d-none d-md-inline pl-2"></i>Events</a></li>
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a href="#" class="nav-link px-3 m-0 px-md-1"><i
-                            class="fas fa-cog d-inline"></i> Settings</a></li>
-                <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link px-3 m-0 px-md-1"><i
-                            class="fas fa-user d-inline"></i> My Tickets</a></li>
-                <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link px-3 m-0 px-md-1"><i
-                            class="fas fa-sign-out-alt d-inline"></i> Sign Out</a></li>
+                <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-user d-none d-md-inline pl-2"></i>My Bookings</a></li>
+                <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-sign-out-alt d-none d-md-inline pl-2"></i>Sign Out</a> </li>
                 {% else %}
-                <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link px-3 m-0 px-md-1">Create Account</a></li>
-                <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link px-3 m-0 px-md-1">Log In</a></li>
+                <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link px-4 m-0 px-md-1">Create Account</a></li>
+                <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link px-4 m-0 px-md-1">Log In</a></li>
                 {% endif %}
-                <li class="nav-item"><a href="{% url 'view_cart' %}" class="nav-link px-3 m-0 px-md-1"><i class="fas fa-shopping-cart d-none d-md-inline">
+                <li class="nav-item"><a href="{% url 'view_cart' %}" class="nav-link px-4 m-0 px-md-1"> <i class="fas fa-shopping-cart d-none d-md-inline px-2">
                     {% if ticket_count > 0 %}
                     <span class="badge badge-pill badge-light">{{ ticket_count }}</span>
                     {% endif %}
-                </i><span class="d-inline d-md-none">Shopping Cart</span>
+                </i> <span class="d-inline d-md-none">Shopping Cart</span>
                 </a></li>
             </ul>
         </div>
