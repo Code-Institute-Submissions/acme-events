@@ -155,6 +155,14 @@ The other core component of the site is its ability to act as an e-commerce plat
 Bookings can be make for one or more events, and customers can book for one or more persons (ie. multiple tickets). Payments are processed by Stripe through the integrated payment form. This naturally requires the site owner to have a Stripe account, and naturally, a small percentage of the transaction will be paid over to Stripe in the form of fees. This is all handled automatically and Stripe issues invoices and suitable tax documents for business owners at regular intervals, making the administration burden of e-commerce in this form reasonably low and the costs always significanly lower than the revenue gained.  
   
 From the customer's perspective, this is a simple and convenient process with a quick checkout and the security and reassurance of using a known and reputable payment processor. The online shopping experience is straightforward and includes the option to modify would-be purchases before payment by updating cart contents or removing an item entirely as needed.  
+
+### Error Handling and Feedback  
+The site includes error handling that aids the user rather than causing alarm or frustration. This includes card errors, form validation, custom error 404 and 500 pages and concenient feedback in small, self-dismissing notifications.  
+  
+Feedback also extends to a small icon in the shopping card icon visible on larger screens, presenting the number of items, if any, in the user's cart.
+  
+### Newsletter Sign Up  
+The site features a newsletter sign up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maxmimum convenience to the site owner or marketing team.  
   
 ### Additional Features
 In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.  
@@ -162,6 +170,9 @@ In addition, the site uses custom 404 and 500 handlers to present the user with 
 To reduce resource-wasting and potentially harmful bot traffic, the site's admin url has been customised. Within the admin panel, some basic listing and sorting functionality has been enabled, allowing the admin to identify bookings and other data with greater convenience.
   
 ### Future Features  
+In addition to the features mentioned above (capacity handling and multi-day events), the site could make use of a package such as [qrcode](https://pypi.org/project/qrcode/) to turn booking IDs into QR Codes. These could be incorporated into post-sales emails as well as being displayed on the post-purchase checkout-success page and the My Bookings history section.  
+  
+Some aspects of the UI could be expanded to provide a more polished UX, notably the post-purchase checkout-success page which could include a detailed purchase summary.
 
 
 # Credits:
