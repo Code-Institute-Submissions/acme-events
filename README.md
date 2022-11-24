@@ -134,9 +134,14 @@ Acme Events is fully responsive and can be enjoyed on a wide range of devices. T
   
 Users can create an account to store default checkout information as well as a history of their bookings. This latter point is useful both in terms of record-keeping and as a convenient means to access one's booking information upon arrival at an event. Default information can be saved at the time of checkout and this can then be overwritten during subsequent checkouts should the information need to be updated. Equally, the information can be updated from the "My Bookings" section without needing to checkout.  
   
+Login is required in order to view the "My Bookings" section as each iteration of this page is specific to one account. Similarly, user authentication ensures that only appropriate pages and options are shown to users according to their logged-in status and role.  
+  
 At the time of account creation, email verification is required, thereby reducing malicious behaviours such as bot sign-ups which would otherwise unecessarily increase the burden on the site and its storage costs.  
   
-
+### Additional Features
+In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.
+  
+### Future Features  
 
 
 # Credits:
