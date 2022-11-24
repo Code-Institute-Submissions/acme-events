@@ -181,6 +181,8 @@ The other core component of the site is its ability to act as an e-commerce plat
 
 Bookings can be make for one or more events, and customers can book for one or more persons (ie. multiple tickets). Payments are processed by Stripe through the integrated payment form. This naturally requires the site owner to have a Stripe account, and naturally, a small percentage of the transaction will be paid over to Stripe in the form of fees. This is all handled automatically and Stripe issues invoices and suitable tax documents for business owners at regular intervals, making the administration burden of e-commerce in this form reasonably low and the costs always significanly lower than the revenue gained.  
   
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-cart-page.png" alt="Screenshot shows the cart page options as shown on desktop, along with the cart icon in the navbar which indicates the number of tickets in the cart" width="70%" height="auto">
+  
 From the customer's perspective, this is a simple and convenient process with a quick checkout and the security and reassurance of using a known and reputable payment processor. The online shopping experience is straightforward and includes the option to modify would-be purchases before payment by updating cart contents or removing an item entirely as needed.  
 
 ### Error Handling and Feedback  
@@ -215,6 +217,7 @@ Some aspects of the UI could be expanded to provide a more polished UX, notably 
   
 ## Testing  - INCOMPLETE  
 
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/html-validator-homepage.png" alt="HTML validator for the site's homepage showing 3 warnings not requiring alteration" width="75%" height="auto">
 ## Deployment  
 <details><summary>
 Click to Expand: Deployment Procedure
