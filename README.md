@@ -1,8 +1,11 @@
-# Acme Events 
+# Acme Events  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/amiresponsive-acme-events-home.png" alt="Am I Responsive overview of homepage" width="100%" height="auto">  
+  
 *Acme Events* is a portfolio site with a sense of humour. Ostensibly, the company organises and sells tickets to events at which would-be consumers can view the latest and greatest in the way of anvils.
 
-An anvil is a blacksmithing tool more familiar to many as the heavy object often dropped on cartoon characters and made famous in this regard by Warner Brothers' Looney Tunes animations. Like almost all products within these Warner Bros. productions, anvils often bore a manufacturer's mark crediting them to ["Acme Corp."](https://en.wikipedia.org/wiki/Acme_Corporation). The ficticious corporation has since become a standin or placeholder wherever a fake company is needed and is even used in some jurisdictions Law Schools Admissions Tests as the plaintiff or defendent in example cases.
-
+An anvil is a blacksmithing tool more familiar to many as the heavy object often dropped on cartoon characters and made famous in this regard by Warner Brothers' Looney Tunes animations. Like almost all products within these Warner Bros. productions, anvils often bore a manufacturer's mark crediting them to ["Acme Corp."](https://en.wikipedia.org/wiki/Acme_Corporation). The ficticious corporation has since become a standin or placeholder wherever a fake company is needed and is even used in some jurisdictions Law Schools Admissions Tests as the plaintiff or defendent in example cases.  
+  
 For the purely fictional business represented by this portfolio project, therefore, the company in question is "Acme Events". As the products showcased at the events do not matter and the purpose of the site is to demonstrate an online booking system for an events company, anvils were chosen as a humorous stand-in.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-landing.png" alt="Acme Events Home or Landing page" width="75%" height="auto">
@@ -170,11 +173,14 @@ The diagram below demonstrates the relationships between the project's models (d
 ## Features  
   
 ### Responsive Design
-
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/amiresponsive-acme-events-events-list.png" alt="Am I Responsive overview of events page" width="100%" height="auto">  
+  
 Acme Events is fully responsive and can be enjoyed on a wide range of devices. The site and its content will adapt to create the best user experience.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-events-list-mobile.png" alt="Event list as rendered on a small mobile screen of 320px width" width="50%" height="auto">
   
+
 ### Accounts  
   
 Users can create an account to store default checkout information as well as a history of their bookings. This latter point is useful both in terms of record-keeping and as a convenient means to access one's booking information upon arrival at an event. Default information can be saved at the time of checkout and this can then be overwritten during subsequent checkouts should the information need to be updated. Equally, the information can be updated from the "My Bookings" section without needing to checkout.  
@@ -420,3 +426,13 @@ In addition, the implementation of webhooks within the site contains within it a
 - Site Favicon ["Metal" icon from Icons8](https://icons8.com/icon/77797/metal).
 - Images compressed with [TinyPNG.com](https://tinypng.com/) and [CompressJPEG.com](https://compressjpeg.com/).  
 - [Autoprefixer used for CSS](https://autoprefixer.github.io/).  
+- [ui.dev's Am I Responsive](https://ui.dev/amiresponsive) tool was used for responsive overview images in this ReadMe file.  
+- While thanks are due to [CodeInstitute](https://codeinstitute.net/ie)'s 'Boutique Ado' project for much of the code, understanding and approach used within this project, much larger thanks are due to the Institue in a general way. This project marks the final one of five learning projects as part of a course syllabus and therefore every aspect of the site is indebted to Code Institute (while all faults and flaws are entirely attributable to the developer!). In particular, the developer wishes to thank:  
+  + Helen M. for conducting a pleasant and encouraging interview that helped the developer to pursue the course in the first place,   
+  + Kasia B. for excellent guidance, encouragement, facilitaiton and communication throughout,  
+  + Tutor James for helping to locate a particularly well-hidden line of buggy code in Project 3,  
+  + All of the tutors who are so thorough, so helpful and sometimes, so very much needed!  
+  + The team of people who helped students through a tricky time when Heroku announced changes to their structure and technical changes were needed to preserve past and present work,  
+  + The [Limerick & Clare Education & Training Board](https://lcetb.ie/),  
+  + Code Institute's instructors and content creators, as well as those working more behind-the-scenes to make the course possible and keep it relevant, including all that thankless admin!  
+  + And finally, the LCETB-Nov-21 cohort, for laughs, useful advice, positivity and shared learning.  
