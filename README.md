@@ -162,8 +162,10 @@ Cart page wireframe (dekstop view)
   
 Checkout page wireframe (dekstop view)  
 
-### Database Structure   - INCOMPLETE
+### Database Structure
 The diagram below demonstrates the relationships between the project's models (database tables).  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-db-diagram.png" alt="Database diagrams made in Lucid Chart" width="75%" height="auto">  
   
 ## Features  
   
