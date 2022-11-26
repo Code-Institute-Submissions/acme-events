@@ -78,6 +78,8 @@ a.nav-link:hover {
     background-color: #343a40;
 }
 
+
+
  /* ====== Hero Section ======  */
 
 #hero > a {
@@ -100,6 +102,14 @@ a.nav-link:hover {
 #brand > span {
     font-size: 2em;
     color: var(--accent-color1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #424242;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #DEDEDE;
 }
 
  /* ====== Page-specific Headers ======  */

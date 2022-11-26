@@ -363,7 +363,11 @@ As the reader can see, there is significant room for improvement in mobile perfo
   
   
 ### Accessibility Testing  
-Accessibility testing consisted partly of the Lighthouse reports summarised above, checking colour contrast and manually navigating the site with [NVDA screenreader](https://www.nvaccess.org/download/) and the keyboard alone.
+Accessibility testing consisted partly of the Lighthouse reports summarised above, checking colour contrast and manually navigating the site with [NVDA screenreader](https://www.nvaccess.org/download/) and the keyboard alone.  
+  
+The site employs a very simple colour scheme and the contrast for all content can be seen in the image below as scored by [coolors.co](https://coolors.co/).
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/colour-contrast-results.jpg" alt="Contrast as measured by Coolors.co suggests good contrast throughout the colour scheme" width="75%" height="auto">
 
 ## Deployment  
 <details><summary>
