@@ -361,6 +361,10 @@ As the reader can see, there is significant room for improvement in mobile perfo
 | 88 | Admin: Delete one of several booking line items       | Admin logged in; booking(s) instance in table                   | /\[admin-url\]                              | Line item is deleted and total is updated accordingly                                                                                                                                        | Pass                                              |
 | 89 | Admin: Delete all/only line item(s) in booking        | Admin logged in; booking(s) instance in table                   | /\[admin-url\]                              | All line items can be deleted and total is set to €0.00, booking instance itself is preserved                                                                                                | Pass                                              |
   
+  
+### Accessibility Testing  
+Accessibility testing consisted partly of the Lighthouse reports summarised above, checking colour contrast and manually navigating the site with [NVDA screenreader](https://www.nvaccess.org/download/) and the keyboard alone.
+
 ## Deployment  
 <details><summary>
 Click to Expand: Deployment Procedure
