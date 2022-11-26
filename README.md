@@ -4,7 +4,7 @@
   
 *Acme Events* is a portfolio site with a sense of humour. Ostensibly, the company organises and sells tickets to events at which would-be consumers can view the latest and greatest in the way of anvils.
 
-An anvil is a blacksmithing tool more familiar to many as the heavy object often dropped on cartoon characters and made famous in this regard by Warner Brothers' Looney Tunes animations. Like almost all products within these Warner Bros. productions, anvils often bore a manufacturer's mark crediting them to ["Acme Corp."](https://en.wikipedia.org/wiki/Acme_Corporation). The ficticious corporation has since become a standin or placeholder wherever a fake company is needed and is even used in some jurisdictions Law Schools Admissions Tests as the plaintiff or defendent in example cases.  
+An anvil is a blacksmithing tool more familiar to many as the heavy object often dropped on cartoon characters and made famous in this regard by Warner Brothers' Looney Tunes animations. Like almost all products within these Warner Bros. productions, anvils often bore a manufacturer's mark crediting them to ["Acme Corp."](https://en.wikipedia.org/wiki/Acme_Corporation). The fictitious corporation has since become a stand-in or placeholder wherever a fake company is needed and is even used in some jurisdictions' Law Schools Admissions Tests as the plaintiff or defendant in example cases.  
   
 For the purely fictional business represented by this portfolio project, therefore, the company in question is "Acme Events". As the products showcased at the events do not matter and the purpose of the site is to demonstrate an online booking system for an events company, anvils were chosen as a humorous stand-in.  
   
@@ -23,25 +23,25 @@ For the purely fictional business represented by this portfolio project, therefo
 9. [Credits](#credits)  
   
 ## Problem Statement  
-Events companies advertising online face a unique version of a common problem; they wish to capture the consumer's full attention at the point of peak interest and prompt the user to take action, however, the event itself may be at a distant point in the future. The ability to sell tickets or take bookings in advance therefore represents a tremendous advantage to their business.
+Events companies advertising online face a unique version of a common problem; they wish to capture the consumer's full attention at the point of peak interest and prompt the user to take action, however, the event itself may be at a distant point in the future. The ability to sell tickets or take bookings in advance, therefore, represents a tremendous advantage to their business.
 
-Third-party platforms to meet this need are in no shortage; however, a percentage of ticket sales is usually lost to platform fees, and the business loses control over how their material is represented when it's rendered on another site. In addition, consumer interest may be lost as the customer clicks through to the platform and is often taken away from the event company's own website. In addition, such platforms depend on their revenue from maximising tickets sales across all events, and may therefore advertise related and even competing events to the customer. In short, the interests of the company and the platform are not entirely aligned.
+Third-party platforms to meet this need are in no shortage; however, a percentage of ticket sales is usually lost to platform fees, and the business loses control over how its material is represented when it's rendered on another site. In addition, consumer interest may be lost as the customer clicks through to the platform and is often taken away from the event company's own website. In addition, such platforms depend on their revenue from maximising ticket sales across all events, and may therefore advertise related and even competing events to the customer. In short, the interests of the company and the platform are not entirely aligned.
 
-Ideally therefore, an event company would have its own native booking system with integrated payment through a secure, reputable payment processing service. Such a system would not take the consumer-user away from the site and would allow them to make multiple bookings, even across multiple events, without leaving the site.
+Ideally, therefore, an event company would have its own native booking system with integrated payment through a secure, reputable payment processing service. Such a system would not take the consumer-user away from the site and would allow them to make multiple bookings, even across multiple events, without leaving the site.
 
 While many future features may yet be implemented, Acme Events demonstrates this solution in practice.  
   
 For an events company, localised reach and customer retention are both vital and often in competition if not well managed. This is a function of staging events in multiple locations within a broader geographical region; in short, a customer may be interested only in events which take place locally to them and these may occur only sporadically.
 
-Digital marketing tools can accomodate this, however, if mismanaged, these same tools can quickly become redundant. Mailchimp provides audience "Groups" which can be used to divide audiences by self-selected criteria, such as interests or geographical region. This allows the site owner to target specific subsections of their subscriber base ("segments" of their Mailchimp "audience") when issuing a newsletter, ensuring each newsletter is best suited to reach its target audience.
+Digital marketing tools can accommodate this, however, if mismanaged, these same tools can quickly become redundant. Mailchimp provides audience "Groups" which can be used to divide audiences by self-selected criteria, such as interests or geographical region. This allows the site owner to target specific subsections of their subscriber base ("segments" of their Mailchimp "audience") when issuing a newsletter, ensuring each newsletter is best suited to reach its target audience.
   
 As a result, newsletters receive greater engagement and higher open and click-through rates, resulting in greater customer retention. Additionally, as well-targetted emails are less likely to be misreported as spam, the sender benefits from higher send-success rates, equally resulting in greater engagement. Although "Acme Events" is not operational in any region, the mechanics for this strategy are in place within the newsletter subscribe form in the site's footer. Here, subscribers can self-sort according to their interest in "Region 1", "Region 2" or "All Regions".
   
-Social media's advance audience targetting can also be of benefit, allowing an events company to maintain a global presence on the internet and yet appeal to local audiences when advertising. Facebook Adverts, for instance, allows the advertiser to define a geographical region for users to which a particular advert should be shown. Combined with other factors, this increases the likelihood of engagement and interaction, as well as social sharing, while ensuring maximum cost-effectiveness. The other factors that might be used in social media advertisement include demographic and interest-based information, allowing the company to target users belonging to demographics considered more affluent or in possession of greater disposable income, for instance, as well as targetting specific interests and even professions. Given the variation in how this user information is often expressed, keywords used in social media marketting may show significant overlap, for example, "blacksmith", "blacksmithing", "metal work" "metalworking", "metalwork" and so on.  
+Social media's advanced audience targetting can also be of benefit, allowing an events company to maintain a global presence on the internet and yet appeal to local audiences when advertising. Facebook Adverts, for instance, allow the advertiser to define a geographical region for users to which a particular advert should be shown. Combined with other factors, this increases the likelihood of engagement and interaction, as well as social sharing, while ensuring maximum cost-effectiveness. The other factors that might be used in social media advertisement include demographic and interest-based information, allowing the company to target users belonging to demographics considered more affluent or in possession of greater disposable income, for instance, as well as targetting specific interests and even professions. Given the variation in how this user information is often expressed, keywords used in social media marketing may show significant overlap, for example, "blacksmith", "blacksmithing", "metal work" "metalworking", "metalwork" and so on.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-facebook-example.png" alt="Example mock-up of Facebook page" width="75%" height="auto">
   
-For many platforms, a sense of engagement is also required in addition to paid advertising and can generate greater interest and enthusiasm. This involves creating original content likely to be of interest to the target audience. In our example case, that might range from blacksmithing tips and demonstrations to quickly-consumed and highly shareable humorous GIFs, videos and/or memes of Warner Bros. content featuring anvils. Although this does not come with a direct financial cost, a significant investment of time is required this should be borne in mind as a form of cost. Therefore, attempting to leverage social media purely as "free" advertising may be a false economy for many businesses. For Acme Events, some degree of paid advertising would be used in conjuction with content creation.  
+For many platforms, a sense of engagement is also required in addition to paid advertising and can generate greater interest and enthusiasm. This involves creating original content likely to be of interest to the target audience. In our example case, that might range from blacksmithing tips and demonstrations to quickly-consumed and highly shareable humorous GIFs, videos and/or memes of Warner Bros. content featuring anvils. Although this does not come with a direct financial cost, a significant investment of time is required this should be borne in mind as a form of cost. Therefore, attempting to leverage social media purely as "free" advertising may be a false economy for many businesses. For Acme Events, some degree of paid advertising would be used in conjunction with content creation.  
   
 As a small business, Google Ads is not considered the first priority for Acme Events but this will be revised as the business grows.  
   
@@ -57,7 +57,7 @@ As a small business, Google Ads is not considered the first priority for Acme Ev
   + Edit event details where necessary.  
   + Delete events if cancelled before their start date.  
   + Rely on automated processes within the site to display only those events that have not already passed (ie. expired events will not be presented to the public).  
-  + Take bookings (sell tickets) online with ease and minimum investment of time.  
+  + Take bookings (sell tickets) online with ease and a minimum investment of time.  
   + Link to and promote venues hosting these events to promote good relations between organiser and venue.  
   + Provide contact information for venues to reduce queries from users that would be more appropriately directed to the venue than the event organiser.  
   + Build a client contact database directly from my website using the integrated newsletter sign-up form.  
@@ -70,7 +70,7 @@ As a small business, Google Ads is not considered the first priority for Acme Ev
   + Easily browse this list of events in chronological order, without the confusion or distraction that might be caused by also seeing expired events.  
   + View more detailed information about a specific event that interests me.  
   + Share a specific event on social media or elsewhere with its dedicated link, for example, if I wish to invite a friend (event-detail view).  
-  + Sign up to a newsletter if I wish to remain informed about upcoming events in a given region or all regions, as well as general announcments and other information.  
+  + Sign up to a newsletter if I wish to remain informed about upcoming events in a given region or all regions, as well as general announcements and other information.  
   + Create an account to save time at checkout if ever I become a consumer-user.  
   + View the website's privacy policy in a new tab.  
   + Access information about event venues, such as contact details and address.  
@@ -82,7 +82,7 @@ As a small business, Google Ads is not considered the first priority for Acme Ev
   + Receive feedback from the site assuring me that a given event booking has been created in my "cart".  
   + Update my cart by increasing or decreasing the quantity of tickets I wish to book for any given event.  
   + Update my cart by deleting an event booking entirely. 
-  + Receive realtime feedback from the site when I update my cart.   
+  + Receive real-time feedback from the site when I update my cart.   
   + Save time at checkout by reusing default information saved to my account.  
   + View my past purchases in a dedicated "My Bookings" profile section.  
   + Update my default information at checkout or within the "My Bookings" profile section of the site.  
@@ -135,35 +135,35 @@ These functions should also be available to users employing a screen reader. See
   + types-cryptography==3.3.23
   
 ## Design Statement  
-The site relies on strong contrast between its dark and light components for visual impact. Many standard UI components will already be familiar to the majority of user's and there is minimal learning curve for the browsing- or consumer- users.  
+The site relies on strong contrast between its dark and light components for visual impact. Many standard UI components will already be familiar to the majority of users and there is minimal learning curve for the browsing- or consumer- users.  
 
-Bootstrap 4 was chosen, over Bootstrap 5, for use with jQuery and support IE 10 and 11.
+Bootstrap 4 was chosen, over Bootstrap 5, for use with jQuery and to support IE 10 and 11.
   
 Wireframe sketches were drawn up in Balsamiq. These reflect basic layout considerations and approximate colour selections.
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Home+-+Desktop.png" alt="Wireframe for homepage in desktop view" width="50%" height="auto">  
   
-Homepage wireframe (dekstop view)  
+Homepage wireframe (desktop view)  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Events+List+-+Desktop.png" alt="Wireframe for events list in desktop view" width="50%" height="auto">  
   
-Event List wireframe (dekstop view)  
+Event List wireframe (desktop view)  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Events+Details+-+Desktop.png" alt="Wireframe for event details page in desktop view" width="50%" height="auto">  
   
-Event details wireframe (dekstop view)  
+Event details wireframe (desktop view)  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/My+Bookings+-+Desktop.png" alt="Wireframe for profile page in desktop view" width="50%" height="auto">  
   
-Account page (profile) wireframe (dekstop view)  
+Account page (profile) wireframe (desktop view)  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Cart+-+Desktop.png" alt="Wireframe for cart page in desktop view" width="50%" height="auto">  
   
-Cart page wireframe (dekstop view)  
+Cart page wireframe (desktop view)  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Checkout+-+Desktop.png" alt="Wireframe for checkout page in desktop view" width="50%" height="auto">  
   
-Checkout page wireframe (dekstop view)  
+Checkout page wireframe (desktop view)  
 
 ### Database Structure
 The diagram below demonstrates the relationships between the project's models (database tables).  
@@ -191,58 +191,58 @@ Login is required in order to view the "My Bookings" section as each iteration o
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-sign-in.png" alt="Sign in page" width="75%" height="auto">
   
-At the time of account creation, email verification is required, thereby reducing malicious behaviours such as bot sign-ups which would otherwise unecessarily increase the burden on the site and its storage costs.  
+At the time of account creation, email verification is required, thereby reducing malicious behaviours such as bot sign-ups which would otherwise unnecessarily increase the burden on the site and its storage costs.  
   
 ### Events  
 One of the site's primary functions is simply to display event information. It does this in two ways, firstly with a chronological overview of events and secondly with a more detailed event-specific page for each event the site-owner has marked "published" and which is not yet expired.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-detail-mobile.png" alt="Event detail view as rendered on a small mobile screen of a desktop" width="50%" height="auto">
   
-Events that have expired (ie. are now in the past) are not rendered but remain in the database for the admin's records. Events that are not marked "published" by the admin exist in the database but are not rendered for the user to see and this allows the admin to draft events wihout making them public, easing their workload.  
+Events that have expired (ie. are now in the past) are not rendered but remain in the database for the admin's records. Events that are not marked "published" by the admin exist in the database but are not rendered for the user to see and this allows the admin to draft events without making them public, easing their workload.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/screencapture-acme-events-events-list.png" alt="The website's events list showing two events, one with an automatically-added placeholder image and one with an admin-selected image" width="75%" height="auto">
   
-Events are linked to Locations (ie. venues), so that a company that hosts events in many of the same venues repeatedly does not have to re-enter location or venue information each time but can simply select the Location to use from the existing records. New Locations can also be added, as well being updated or deleted entirely as needed.  
+Events are linked to Locations (ie. venues) so that a company that hosts events in many of the same venues repeatedly does not have to re-enter location or venue information each time but can simply select the Location to use from the existing records. New Locations can also be added, as well as being updated or deleted entirely as needed.  
   
 In addition to location information, event data can include time and date information, short and long descriptions, ticket prices, and images. If an event lacks a featured image for any reason, a placeholder image will automatically be rendered instead. This is also true for the featured image associated with a Location.  
   
-Events also feature a capacity variable, although this is not currently in use within the site but could be readily developed as a future feature. Likewise, an end_date variable exists which would be integrated into the site's logic to accomodate multi-day events, however, this would also be a future feature and is not currently in use within the site.  
+Events also feature a capacity variable, although this is not currently in use within the site but could be readily developed as a future feature. Likewise, an end_date variable exists which would be integrated into the site's logic to accommodate multi-day events, however, this would also be a future feature and is not currently in use within the site.  
     
 ### Online Transactions  
 The other core component of the site is its ability to act as an e-commerce platform, allowing users to make the leap from browsing to purchasing with relative ease and at the moment of peak interest in the event(s) in question.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-cart-page.png" alt="Screenshot shows the cart page options as shown on desktop, along with the cart icon in the navbar which indicates the number of tickets in the cart" width="75%" height="auto">
 
-Bookings can be make for one or more events, and customers can book for one or more persons (ie. multiple tickets). Payments are processed by Stripe through the integrated payment form. This naturally requires the site owner to have a Stripe account, and naturally, a small percentage of the transaction will be paid over to Stripe in the form of fees. This is all handled automatically and Stripe issues invoices and suitable tax documents for business owners at regular intervals, and can generate receipts within the dashboard, making the administration burden of e-commerce in this form reasonably low and the costs always significanly lower than the revenue gained.  
+Bookings can be made for one or more events, and customers can book for one or more persons (ie. multiple tickets). Payments are processed by Stripe through the integrated payment form. This naturally requires the site owner to have a Stripe account, and naturally, a small percentage of the transaction will be paid over to Stripe in the form of fees. This is all handled automatically and Stripe issues invoices and suitable tax documents for business owners at regular intervals and can generate receipts within the dashboard, making the administration burden of e-commerce in this form reasonably low and the costs always significantly lower than the revenue gained.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/stripe-example-receipt.png" alt="Stripe-generated receipt" width="70%" height="auto">
   
 From the customer's perspective, this is a simple and convenient process with a quick checkout and the security and reassurance of using a known and reputable payment processor. The online shopping experience is straightforward and includes the option to modify would-be purchases before payment by updating cart contents or removing an item entirely as needed.  
 
 ### Error Handling and Feedback  
-The site includes error handling that aids the user rather than causing alarm or frustration. This includes card errors, form validation, custom error 404 and 500 pages and concenient feedback in small, self-dismissing notifications.  
+The site includes error handling that aids the user rather than causing alarm or frustration. This includes card errors, form validation, custom error 404 and 500 pages and convenient feedback in small, self-dismissing notifications.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-500.png" alt="Custom Error 500 page" width="75%" height="auto">
   
-Feedback also extends to a small icon in the shopping card icon visible on larger screens, presenting the number of items, if any, in the user's cart.  
+Feedback also extends to a small icon in the shopping cart icon visible on larger screens, presenting the number of items, if any, in the user's cart.  
   
-To aid the user in navigating the site, the checkout page is not accessible when the user's cart is empty and instead, the user is redirected to the Events page with a notification informing them that their cart is currently empty. The checkout-succeess page is only assessible with suitable parameters and visiting the url `/checkout-success` with no additional parameters results in a 404 page with a prompt to return home.  
+To aid the user in navigating the site, the checkout page is not accessible when the user's cart is empty and instead, the user is redirected to the Events page with a notification informing them that their cart is currently empty. The checkout-success page is only accessible with suitable parameters and visiting the URL `/checkout-success` with no additional parameters results in a 404 page with a prompt to return home.  
   
-<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-no-items-in-cart.png" alt="Feeback informing user there are not items in their cart" width="25%" height="auto">
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-no-items-in-cart.png" alt="Feeback informing user there are no items in their cart" width="25%" height="auto">
   
-To prevent accidentaly sign out, confirmation is required before signing out.  
+To prevent accidentally sign-out, confirmation is required before signing out.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-sign-out.png" alt="Sign out confirmation page" width="75%" height="auto">
   
 ### Newsletter Sign Up  
-The site features a newsletter sign up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maxmimum convenience to the site owner or marketing team. Users can self-select a "group" according to their interests, allowing them to receive less frequent and more targetted emails of genuine interest and relevance to them.  
+The site features a newsletter sign-up form embedded into the footer of all pages. This form is quick and easy to complete and integrated with MailChimp for maximum convenience to the site owner or marketing team. Users can self-select a "group" according to their interests, allowing them to receive less frequent and more targeted emails of genuine interest and relevance to them.  
 
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/acme-events-footer.png" alt="Newsletter sign-up form as presented in the site footer" width="75%" height="auto">
   
 ### Additional Features
 In addition, the site uses custom 404 and 500 handlers to present the user with a UI in keeping with the rest of the site (avoiding causing undue alarm or disorientation) and a link to return 'Home', ie. the site's landing page.  
   
-To reduce resource-wasting and potentially harmful bot traffic, the site's admin url has been customised. Within the admin panel, some basic listing and sorting functionality has been enabled, allowing the admin to identify bookings and other data with greater convenience.
+To reduce resource-wasting and potentially harmful bot traffic, the site's admin URL has been customised. Within the admin panel, some basic listing and sorting functionality have been enabled, allowing the admin to identify bookings and other data with greater convenience.
   
 ### Future Features  
 In addition to the features mentioned above (capacity handling and multi-day events), the site could make use of a package such as [qrcode](https://pypi.org/project/qrcode/) to turn booking IDs into QR Codes. These could be incorporated into post-sales emails as well as being displayed on the post-purchase checkout-success page and the My Bookings history section.  
@@ -253,11 +253,11 @@ Some aspects of the UI could be expanded to provide a more polished UX, notably 
   
 In large part, testing was carried out manually through the development process, checking that each function worked as expected and checking whether various user behaviours or choices were appropriately handled.  
   
-Some basic tools were also used, such as [W3C's HTML automator](https://validator.w3.org/). Although some warnings appeared in relation to Django's template language as this is not HTML, once these were removed or where possible ignored, the only remaning warnings are in relation to code from reliable external resources (e.g. Mailchimp). These do not negatively affect the site's functioning and as such, can be safely ignored.  
+Some basic tools were also used, such as [W3C's HTML automator](https://validator.w3.org/). Although some warnings appeared in relation to Django's template language as this is not HTML, once these were removed or where possible ignored, the only remaining warnings are in relation to code from reliable external resources (e.g. Mailchimp). These do not negatively affect the site's functioning and as such, can be safely ignored.  
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/html-validator-homepage.png" alt="HTML validator for the site's homepage showing 3 warnings not requiring alteration" width="75%" height="auto">  
   
-Similarly, WC3's CSS validator found no issues with the CSS, excepting two warnings to indicate vendor extensions which are intentional.  
+Similarly, WC3's CSS validator found no issues with the CSS, except two warnings to indicate vendor extensions which are intentional.  
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
@@ -344,8 +344,8 @@ As the reader can see, there is significant room for improvement in mobile perfo
 | 63 | Profile: Update Details                               | User logged in; previously saved details                        | /profile                                    | After adding valid details and clicking Update Details button, page reloads with updated address info                                                                                        | Pass                                              |
 | 64 | Sign up successfully                                  | User logged out; valid input                                    | /accounts/signup                            | Confirmation message displayed; confirmation email sent; sign-in page loads                                                                                                                  | Pass                                              |
 | 65 | Confirm email address                                 | New sign up completed, confirmation email received              | \[user email inbox\]                        | After clicking confirmation link, user is brought to site, confirmation is shown, cart - if any - remains intact                                                                             | Pass                                              |
-| 66 | Forgot Password (1)                                   | Pre-exising account                                             | /accounts/login                             | Password reset link sent via emial                                                                                                                                                           | Pass                                              |
-| 67 | Forgot Password (2)                                   | Pre-exising account; Forgot Password (1) complete               | \[user email inbox\]                        | Reset link opens password reset form and password is successfully reset upon valid input                                                                                                     | Pass                                              |
+| 66 | Forgot Password (1)                                   | Pre-existing account                                             | /accounts/login                             | Password reset link sent via email                                                                                                                                                           | Pass                                              |
+| 67 | Forgot Password (2)                                   | Pre-existing account; Forgot Password (1) complete               | \[user email inbox\]                        | Reset link opens password reset form and password is successfully reset upon valid input                                                                                                     | Pass                                              |
 | 68 | Expired Forgot Password Link                          | Copy used reset link into new session                           | accounts/password/reset/key/4-set-password/ | Bad token error shown. User offered link to new password-reset request                                                                                                                       | Pass                                              |
 | 69 | Sign in URL                                           | User logged in                                                  | /accounts/login                             | User redirected to homepage                                                                                                                                                                  | Pass                                              |
 | 70 | Sign out URL (1)                                      | User logged in                                                  | /accounts/logout                            | User asked to confirm action                                                                                                                                                                 | Pass                                              |
@@ -355,7 +355,7 @@ As the reader can see, there is significant room for improvement in mobile perfo
 | 74 | Signed-in Nav - PC                                    | User logged in; desktop user                                    | https://amce-events.herokuapp.com           | Nav shows links to events, account, sign out and cart icon                                                                                                                                   | Pass                                              |
 | 75 | Signed-in non-home Nav - PC                           | User logged in; desktop user                                    | Any except homepage                         | Nav shows links to home, events, account, sign out and cart icon                                                                                                                             | Pass                                              |
 | 76 | Signed-in Nav - Mobile                                | User logged in; mobile device user                              | https://amce-events.herokuapp.com           | Hamburger menu contains links to events, account, sign out and shopping cart                                                                                                                 | Pass                                              |
-| 77 | Signed-in non-home Nav - Mobile                       | User logged in; mobile device user                              | Any except homepage                         | Hamburger menu contains links to home, events, accoutn, sign-out and shopping cart                                                                                                           | Pass                                              |
+| 77 | Signed-in non-home Nav - Mobile                       | User logged in; mobile device user                              | Any except homepage                         | Hamburger menu contains links to home, events, account, sign-out and shopping cart                                                                                                           | Pass                                              |
 | 78 | Admin: Add Event                                      | Admin logged in                                                 | /\[admin-url\]                              | Saved event details appear in Events table                                                                                                                                                   | Pass                                              |
 | 79 | Admin: Published Event                                | Admin logged in; event date in future                           | /\[admin-url\] + /events                    | Event table item marked "published" and future-dated appears on /events                                                                                                                      | Pass                                              |
 | 80 | Admin: Unpublished Event                              | Admin logged in; event date in future                           | /\[admin-url\] + /events                    | Event table item not marked as "published" does not appear on /events, regardless of date                                                                                                    | Pass                                              |
@@ -392,7 +392,7 @@ The site was deployed to Heroku using the following procedure. Before beginning,
 3. The app must then be given a unique name and the developer's region must be selected from a list of options.  
 4. From the Settings tab of the next screen, select "Reveal config vars".  
 5. A database url, port and secret key are required config vars which can be added in the Heroku project settings.  
-6. An AWS access key and secret key (django) are also required to use the site in its current configuration, while a `USE_AWS` key can be set to `True` for the deployed version of the site.  
+6. An AWS access key and secret key (Django) are also required to use the site in its current configuration, while a `USE_AWS` key can be set to `True` for the deployed version of the site.  
 7. In addition, you may wish to make use of the email settings which require DEFAULT_FROM_EMAIL, EMAIL_HOST_PASS and EMAIL_HOST_USER keys to be set.  
 8. You will need a `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY` and `STRIPE_WH_SECRET` key.
 9. Within the deploy section, select GitHub as the deployment method and authorise.
@@ -409,7 +409,7 @@ Forking a repository does not create locally-stored copies of its files on your 
 </details>  
   
 ## Known Bugs  
-At the time of writing, the site's webhook's feature is not fully operation. Once operational, this feature will allow bookings to be reconsituted from the data sent to Stripe when processing the payment, should the checkout form itself fail to submit to the site for any reason (for example, premature broswer closure resulting a charge being processed but no booking being created within the site's database). As a failsafe measure ensuring quality customer experience, the site should not ideally be deployed without resolving this issue, at least in the opinion of the developer.  
+At the time of writing, the site's webhooks feature is not fully operational. Once operational, this feature will allow bookings to be reconstituted from the data sent to Stripe when processing the payment, should the checkout form itself fail to submit to the site for any reason (for example, premature browser closure resulting in a charge being processed but no booking being created within the site's database). As a failsafe measure ensuring quality customer experience, the site should not ideally be deployed without resolving this issue, at least in the opinion of the developer.  
   
 In addition, the implementation of webhooks within the site contains within it a mechanism to send post-purchase confirmation emails. At present, this feature is not operational as it is affected by the webhooks bug.  
   
@@ -417,7 +417,7 @@ In addition, the implementation of webhooks within the site contains within it a
 - [Hero Image (anvil)](https://www.freepik.com/free-photo/close-up-photo-shoot-hammer-anvil-dark-smith-workshop_24917063.htm#query=anvil&position=1&from_view=search&track=sph) by fxquadro on Freepik.  
 - [Warner Bros logo from Wikipedia (public domain)](https://en.wikipedia.org/wiki/Warner_Bros.#/media/File:Warner_Bros._(2019)_logo.svg).  
 - ["Anvil Show: tools in use" event photo by igovar igovar via Pexels](https://www.pexels.com/photo/crop-man-forging-metal-in-smithy-4575137/).  
-- [Blue anvil used as placeholder image via Google images creative commmons licence](https://www.google.com/search?q=blue%20anvil&tbm=isch&tbs=il:cl&rlz=1C1CHBF_enIE1001IE1001&hl=en&sa=X&ved=0CAAQ1vwEahcKEwiQtf7P68v7AhUAAAAAHQAAAAAQCA&biw=1147&bih=540), original product image via [eur.vevor.com](https://eur.vevor.com/cast-steel-anvil-c_10827/round-horn-30kg-blacksmith-cast-steel-anvil-4-anchor-point-66lbs-double-horn-p_010142839599?utm_source=google&utm_campaign=16594172762&utm_term=&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jHaz98pmlucj3qK2wT2wPoVpYH6HAnddqJJzEcnaqX_4zij8IrZdDcaAjouEALw_wcB)  
+- [Blue anvil used as placeholder image via Google images creative commons licence](https://www.google.com/search?q=blue%20anvil&tbm=isch&tbs=il:cl&rlz=1C1CHBF_enIE1001IE1001&hl=en&sa=X&ved=0CAAQ1vwEahcKEwiQtf7P68v7AhUAAAAAHQAAAAAQCA&biw=1147&bih=540), original product image via [eur.vevor.com](https://eur.vevor.com/cast-steel-anvil-c_10827/round-horn-30kg-blacksmith-cast-steel-anvil-4-anchor-point-66lbs-double-horn-p_010142839599?utm_source=google&utm_campaign=16594172762&utm_term=&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jHaz98pmlucj3qK2wT2wPoVpYH6HAnddqJJzEcnaqX_4zij8IrZdDcaAjouEALw_wcB)  
 - ["Daffy Tower" venue image used in "Winter Exhibition" event by Aleksandar Pasaric on Pexels](https://www.pexels.com/photo/photo-f-building-in-the-middle-of-ocean-2041556/)  
 - [Anvil image used for "Winter Exhibition event by Nathan Torsy on Pexels](https://www.pexels.com/photo/close-up-of-ironwork-in-workshop-10025348/).  
 - [Warner Bros tower image from commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:WBTowerNew.jpg).  
@@ -429,7 +429,7 @@ In addition, the implementation of webhooks within the site contains within it a
 - [ui.dev's Am I Responsive](https://ui.dev/amiresponsive) tool was used for responsive overview images in this ReadMe file.  
 - While thanks are due to [CodeInstitute](https://codeinstitute.net/ie)'s 'Boutique Ado' project for much of the code, understanding and approach used within this project, much larger thanks are due to the Institue in a general way. This project marks the final one of five learning projects as part of a course syllabus and therefore every aspect of the site is indebted to Code Institute (while all faults and flaws are entirely attributable to the developer!). In particular, the developer wishes to thank:  
   + Helen M. for conducting a pleasant and encouraging interview that helped the developer to pursue the course in the first place,   
-  + Kasia B. for excellent guidance, encouragement, facilitaiton and communication throughout,  
+  + Kasia B. for excellent guidance, encouragement, facilitation and communication throughout,  
   + Tutor James for helping to locate a particularly well-hidden line of buggy code in Project 3,  
   + All of the tutors who are so thorough, so helpful and sometimes, so very much needed!  
   + The team of people who helped students through a tricky time when Heroku announced changes to their structure and technical changes were needed to preserve past and present work,  
