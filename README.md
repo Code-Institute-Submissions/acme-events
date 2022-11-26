@@ -368,7 +368,9 @@ Accessibility testing consisted partly of the Lighthouse reports summarised abov
 The site employs a very simple colour scheme and the contrast for all content can be seen in the image below as scored by [coolors.co](https://coolors.co/).
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/colour-contrast-results.jpg" alt="Contrast as measured by Coolors.co suggests good contrast throughout the colour scheme" width="75%" height="auto">
-
+  
+The site can be navigated successfully by keyboard alone, and also using NVDA screenreader. Alt-text (omitted from some purely decorative images) is automatically generated based on other properties of the object to which the image belongs, ensuring relevant alt-text is always present.  
+  
 ## Deployment  
 <details><summary>
 Click to Expand: Deployment Procedure
