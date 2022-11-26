@@ -353,9 +353,12 @@ At the time of writing, the site's webhook's feature is not fully operation. Onc
 In addition, the implementation of webhooks within the site contains within it a mechanism to send post-purchase confirmation emails. At present, this feature is not operational as it is affected by the webhooks bug.  
   
 # Credits:
-- Hero Image (anvil) <a href="https://www.freepik.com/free-photo/close-up-photo-shoot-hammer-anvil-dark-smith-workshop_24917063.htm#query=anvil&position=1&from_view=search&track=sph">by fxquadro on Freepik</a>.  
-- Event photo by igovar igovar [via Pexels](https://www.pexels.com/photo/)crop-man-forging-metal-in-smithy-4575137/
-- Helpful article on Django slugs <a href="https://learndjango.com/tutorials/django-slug-tutorial">from Learn Django</a>.  
+- [Hero Image (anvil)](https://www.freepik.com/free-photo/close-up-photo-shoot-hammer-anvil-dark-smith-workshop_24917063.htm#query=anvil&position=1&from_view=search&track=sph) by fxquadro on Freepik.  
+- [Warner Bros logo from Wikipedia (public domain)](https://en.wikipedia.org/wiki/Warner_Bros.#/media/File:Warner_Bros._(2019)_logo.svg).  
+- ["Anvil Show: tools in use" event photo by igovar igovar via Pexels](https://www.pexels.com/photo/crop-man-forging-metal-in-smithy-4575137/).  
+- [Blue anvil used as placeholder image via Google images creative commmons licence](https://www.google.com/search?q=blue%20anvil&tbm=isch&tbs=il:cl&rlz=1C1CHBF_enIE1001IE1001&hl=en&sa=X&ved=0CAAQ1vwEahcKEwiQtf7P68v7AhUAAAAAHQAAAAAQCA&biw=1147&bih=540), original product image via [eur.vevor.com](https://eur.vevor.com/cast-steel-anvil-c_10827/round-horn-30kg-blacksmith-cast-steel-anvil-4-anchor-point-66lbs-double-horn-p_010142839599?utm_source=google&utm_campaign=16594172762&utm_term=&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jHaz98pmlucj3qK2wT2wPoVpYH6HAnddqJJzEcnaqX_4zij8IrZdDcaAjouEALw_wcB)  
+- ["Daffy Tower" image used in "Winter Exhibition" event by Aleksandar Pasaric on Pexels](https://www.pexels.com/photo/photo-f-building-in-the-middle-of-ocean-2041556/)
+- [Helpful article on Django slugs](https://learndjango.com/tutorials/django-slug-tutorial) from Learn Django.   
 - README testing table converted from excel format with [Table To Markdown](https://tabletomarkdown.com/convert-spreadsheet-to-markdown).
-
-<!-- - <a target="_blank" href="https://icons8.com/icon/77797/metal">Site Favicon: "Metal"</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+- Site Favicon ["Metal" icon from Icons8](https://icons8.com/icon/77797/metal).
+- Images compressed with [TinyPNG.com](https://tinypng.com/).  
