@@ -26,9 +26,14 @@
       <!-- All Screens: Event Info -->
       <div class="col-12 col-md-11 d-block d-md-flex pb-4">
         <!-- All Screens: Event Featured Image -->
-        <div class="col-12 col-md-4 order-1 order-md-2">
-          <img class=col-12 src="{{ event.featured_image.url }}" alt="{{ event.name }} image">
-        </div>
+        {% if event.featured_image %}
+        <!-- IF may seem redundant in light of placeholder images as failsafe in case
+          admin accidentally omits image when first creating Event object, but IF here
+          avoids Error 500 if admin accidentally deletes featured image after publishing -->
+          <div class="col-12 col-md-4 order-1 order-md-2">
+            <img class=col-12 src="{{ event.featured_image.url }}" alt="{{ event.name }} image">
+          </div>
+        {% endif %}
         <!-- All Screens: Event Details -->
         <div class="col-12 col-md-8 order-2 order-md-1">
           <h3 class="col-12">{{ event.start_date }}<span class="d-block">{{ event.start_time }} - {{ event.end_time }}</span></h3>

@@ -363,5 +363,5 @@ In addition, the implementation of webhooks within the site contains within it a
 - [Helpful article on Django slugs](https://learndjango.com/tutorials/django-slug-tutorial) from Learn Django.   
 - README testing table converted from excel format with [Table To Markdown](https://tabletomarkdown.com/convert-spreadsheet-to-markdown).
 - Site Favicon ["Metal" icon from Icons8](https://icons8.com/icon/77797/metal).
-- Images compressed with [TinyPNG.com](https://tinypng.com/).  
+- Images compressed with [TinyPNG.com](https://tinypng.com/) and [CompressJPEG.com](https://compressjpeg.com/).  
 - [Autoprefixer used for CSS](https://autoprefixer.github.io/).  

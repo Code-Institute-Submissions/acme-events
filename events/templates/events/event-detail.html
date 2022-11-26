@@ -33,9 +33,14 @@
         </div>
     </div>
     <div class="row">
+      {% if event.location.venue_image %}
+      <!-- IF may seem redundant in light of placeholder images as failsafe in case
+      admin accidentally omits image when first creating Location object, but IF here
+      avoids error if admin accidentally deletes image after publishing -->
         <div class="col-12 px-0">
             <img class="col-12 img-rounded venue-image" src="{{ event.location.venue_image.url }}" alt="{{ event.location.name }} image">
           </div>
+      {% endif %}
         <p class="col-12 my-2">{{ event.long_description }}.</p>     
     </div>
 
