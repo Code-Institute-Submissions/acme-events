@@ -137,7 +137,9 @@ The site relies on strong contrast between its dark and light components for vis
 Bootstrap 4 was chosen, over Bootstrap 5, for use with jQuery and support IE 10 and 11.
   
 Wireframe sketches were drawn up in Balsamiq. These reflect basic layout considerations rather than aesthetics.
+  
 
+  
 ### Database Structure   - INCOMPLETE
 The diagram below demonstrates the relationships between the project's models (database tables).  
   
