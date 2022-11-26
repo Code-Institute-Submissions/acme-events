@@ -239,7 +239,7 @@ In addition to the features mentioned above (capacity handling and multi-day eve
   
 Some aspects of the UI could be expanded to provide a more polished UX, notably the post-purchase checkout-success page which could include a detailed purchase summary.
   
-## Testing  - INCOMPLETE  
+## Testing  
   
 In large part, testing was carried out manually through the development process, checking that each function worked as expected and checking whether various user behaviours or choices were appropriately handled.  
   
@@ -247,7 +247,24 @@ Some basic tools were also used, such as [W3C's HTML automator](https://validato
   
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/html-validator-homepage.png" alt="HTML validator for the site's homepage showing 3 warnings not requiring alteration" width="75%" height="auto">  
   
-In addition, 
+Similarly, WC3's CSS validator found no issues with the CSS, excepting two warnings to indicate vendor extensions which are intentional.  
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+  
+In addition, Google's Lighthouse reports were run on each page in both mobile and desktop modes, and summaries of these can be found below.  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/desktop-lighthouse-reports.jpg" alt="Lighthouse report summaries for desktop mode" width="75%" height="auto">  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/mobile-lighthouse-reports.jpg" alt="Lighthouse report summaries for simulated mobile mode" width="75%" height="auto">  
+  
+As the reader can see, there is significant room for improvement in mobile performance at present, largely through image optimization and some code refactoring.  
+  
+
 ### Manual Tests  
   
 | #  | Title                                                 | Precondition(s)                                                 | URL/Action/State                            | Expected Result                                                                                                                                                                              | Result                                            |
