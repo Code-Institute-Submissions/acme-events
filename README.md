@@ -131,15 +131,37 @@ These functions should also be available to users employing a screen reader. See
   + stripe==4.2.0
   + types-cryptography==3.3.23
   
-## Design Statement     - INCOMPLETE
+## Design Statement  
 The site relies on strong contrast between its dark and light components for visual impact. Many standard UI components will already be familiar to the majority of user's and there is minimal learning curve for the browsing- or consumer- users.  
 
 Bootstrap 4 was chosen, over Bootstrap 5, for use with jQuery and support IE 10 and 11.
   
-Wireframe sketches were drawn up in Balsamiq. These reflect basic layout considerations rather than aesthetics.
+Wireframe sketches were drawn up in Balsamiq. These reflect basic layout considerations and approximate colour selections.
   
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Home+-+Desktop.png" alt="Wireframe for homepage in desktop view" width="50%" height="auto">  
+  
+Homepage wireframe (dekstop view)  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Events+List+-+Desktop.png" alt="Wireframe for events list in desktop view" width="50%" height="auto">  
+  
+Event List wireframe (dekstop view)  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Events+Details+-+Desktop.png" alt="Wireframe for event details page in desktop view" width="50%" height="auto">  
+  
+Event details wireframe (dekstop view)  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/My+Bookings+-+Desktop.png" alt="Wireframe for profile page in desktop view" width="50%" height="auto">  
+  
+Account page (profile) wireframe (dekstop view)  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Cart+-+Desktop.png" alt="Wireframe for cart page in desktop view" width="50%" height="auto">  
+  
+Cart page wireframe (dekstop view)  
+  
+<img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/wireframes/Checkout+-+Desktop.png" alt="Wireframe for checkout page in desktop view" width="50%" height="auto">  
+  
+Checkout page wireframe (dekstop view)  
 
-  
 ### Database Structure   - INCOMPLETE
 The diagram below demonstrates the relationships between the project's models (database tables).  
   
