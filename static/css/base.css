@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -42,7 +49,8 @@ background-color: var(--accent-color2);
  a {
     color: black;
     text-decoration: underline;
-    text-decoration-color: var(--accent-color1);
+    -webkit-text-decoration-color: var(--accent-color1);
+            text-decoration-color: var(--accent-color1);
  }
 
  a.link-on-black {
@@ -62,7 +70,8 @@ a.nav-link {
 
 a.nav-link:hover {
     text-decoration: underline;
-    text-decoration-color: var(--accent-color1);
+    -webkit-text-decoration-color: var(--accent-color1);
+            text-decoration-color: var(--accent-color1);
 }
 
 .scrolled {
@@ -196,4 +205,4 @@ hr {
     footer input {
         margin-bottom: .5rem;
     }
-  }
+}
