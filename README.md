@@ -357,8 +357,11 @@ In addition, the implementation of webhooks within the site contains within it a
 - [Warner Bros logo from Wikipedia (public domain)](https://en.wikipedia.org/wiki/Warner_Bros.#/media/File:Warner_Bros._(2019)_logo.svg).  
 - ["Anvil Show: tools in use" event photo by igovar igovar via Pexels](https://www.pexels.com/photo/crop-man-forging-metal-in-smithy-4575137/).  
 - [Blue anvil used as placeholder image via Google images creative commmons licence](https://www.google.com/search?q=blue%20anvil&tbm=isch&tbs=il:cl&rlz=1C1CHBF_enIE1001IE1001&hl=en&sa=X&ved=0CAAQ1vwEahcKEwiQtf7P68v7AhUAAAAAHQAAAAAQCA&biw=1147&bih=540), original product image via [eur.vevor.com](https://eur.vevor.com/cast-steel-anvil-c_10827/round-horn-30kg-blacksmith-cast-steel-anvil-4-anchor-point-66lbs-double-horn-p_010142839599?utm_source=google&utm_campaign=16594172762&utm_term=&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jHaz98pmlucj3qK2wT2wPoVpYH6HAnddqJJzEcnaqX_4zij8IrZdDcaAjouEALw_wcB)  
-- ["Daffy Tower" image used in "Winter Exhibition" event by Aleksandar Pasaric on Pexels](https://www.pexels.com/photo/photo-f-building-in-the-middle-of-ocean-2041556/)
+- ["Daffy Tower" venue image used in "Winter Exhibition" event by Aleksandar Pasaric on Pexels](https://www.pexels.com/photo/photo-f-building-in-the-middle-of-ocean-2041556/)  
+- [Anvil image used for "Winter Exhibition event by Nathan Torsy on Pexels](https://www.pexels.com/photo/close-up-of-ironwork-in-workshop-10025348/).  
+- [Warner Bros tower image from commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:WBTowerNew.jpg).  
 - [Helpful article on Django slugs](https://learndjango.com/tutorials/django-slug-tutorial) from Learn Django.   
 - README testing table converted from excel format with [Table To Markdown](https://tabletomarkdown.com/convert-spreadsheet-to-markdown).
 - Site Favicon ["Metal" icon from Icons8](https://icons8.com/icon/77797/metal).
 - Images compressed with [TinyPNG.com](https://tinypng.com/).  
+- [Autoprefixer used for CSS](https://autoprefixer.github.io/).  
