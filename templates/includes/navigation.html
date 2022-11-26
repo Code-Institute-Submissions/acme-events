@@ -14,13 +14,13 @@
                 {% if template_name != 'index' %}
                 <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-4 m-0 px-md-1">Home</a></li>
                 {% endif %}
-                <li class="nav-item"><a href="{% url 'event_list' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-ticket-alt d-none d-md-inline pl-2"></i>Events</a></li>
+                <li class="nav-item"><a href="{% url 'event_list' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-ticket-alt d-none d-md-inline pl-2 pr-1"></i>Events</a></li>
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-user d-none d-md-inline pl-2"></i>My Bookings</a></li>
-                <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-sign-out-alt d-none d-md-inline pl-2"></i>Sign Out</a> </li>
+                <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-user d-none d-md-inline pl-2 pr-1"></i>Account</a></li>
+                <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-sign-out-alt d-none d-md-inline pl-2 pr-1"></i>Sign Out</a> </li>
                 {% else %}
-                <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link px-4 m-0 px-md-1">Create Account</a></li>
-                <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link px-4 m-0 px-md-1">Log In</a></li>
+                <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-user d-none d-md-inline pl-2 pr-1"></i>Create Account</a></li>
+                <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link px-4 m-0 px-md-1"><i class="fas fa-sign-in-alt d-none d-md-inline pl-2 pr-1"></i>Log In</a></li>
                 {% endif %}
                 <li class="nav-item"><a href="{% url 'view_cart' %}" class="nav-link px-4 m-0 px-md-1"> <i class="fas fa-shopping-cart d-none d-md-inline px-2">
                     {% if ticket_count > 0 %}

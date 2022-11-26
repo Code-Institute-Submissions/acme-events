@@ -218,13 +218,14 @@ Some aspects of the UI could be expanded to provide a more polished UX, notably 
 ## Testing  - INCOMPLETE  
 
 <img src="https://acme-events.s3.eu-west-1.amazonaws.com/media/readme/html-validator-homepage.png" alt="HTML validator for the site's homepage showing 3 warnings not requiring alteration" width="75%" height="auto">
+  
 ## Deployment  
 <details><summary>
 Click to Expand: Deployment Procedure
 </summary></br>  
   
 ### Heroku  
-The site was deployed to Heroku using the following procedure. Before beginning, ensure that requirements.txt is up to date. Similarly, ensure that ``DEBUG = False` in settings.py or that `DEBUG` is appropriately handled with a control flow that ensures it is only `True` in the local development environment.
+The site was deployed to Heroku using the following procedure. Before beginning, ensure that requirements.txt is up to date. Similarly, ensure that `DEBUG = False` in settings.py or that `DEBUG` is appropriately handled with a control flow that ensures it is only `True` in the local development environment.
   
 1. An account was created on [Heroku.com](https://www.heroku.com/)  
 2. Once logged in, select "Create new app".  
