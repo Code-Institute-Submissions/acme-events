@@ -7,7 +7,7 @@ class Location(models.Model):
     venue_image = models.ImageField(
         blank=True, null=True,
         upload_to='venue_images',
-        default='placeholder-images/Warner_Bros_logo.png'
+        default='placeholder_images/Warner_Bros_logo.png'
         )
     street_address1 = models.CharField(max_length=150)
     street_address2 = models.CharField(max_length=150, blank=True, null=True)
@@ -36,7 +36,7 @@ class Event(models.Model):
     featured_image = models.ImageField(
         blank=True, null=True,
         upload_to='event_images',
-        default='placeholder-images/placeholder_anvil.jpeg'
+        default='placeholder_images/placeholder_anvil.jpeg'
     )
     short_description = models.TextField()
     long_description = models.TextField()
