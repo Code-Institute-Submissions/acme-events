@@ -90,7 +90,7 @@ class StripeWH_Handler:
                     street_address1__iexact=billing_details.address.line1,
                     street_address2__iexact=billing_details.address.line2,
                     county__iexact=billing_details.address.state,
-                    booking_total=total,
+                    booking_total=booking_total,
                     original_cart=cart,
                     stripe_pid=pid,
                 )
