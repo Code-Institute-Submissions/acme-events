@@ -17,7 +17,6 @@ class StripeWH_Handler:
     def __init__(self, request):
         """ Assigns request as attribute of custom class """
         self.request = request
-        print('wh_handler.py: __init__ method run')
 
     def _send_confirmation_email(self, booking):
         """Send post-booking confirmation email to user """
@@ -38,7 +37,6 @@ class StripeWH_Handler:
 
     def handle_stripe_event(self, event):
         """ Handle a generic/unknown/unexpected webhook event """
-        print('wh_handler.py: Generic/Unknown webhook encountered')
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
@@ -135,8 +133,6 @@ class StripeWH_Handler:
                     original_cart=cart,
                     stripe_pid=pid,
                 )
-                print(first_name)
-                print(last_name)
                 # being sure to use the json.dumps cart, not session cart
                 # which may have expired due to browser closure
                 for item_id, item_data in json.loads(cart).items():
@@ -166,7 +162,6 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """ Handle payment intent failed webhook from Stripe """
-        print('wh_handler.py: Stage 4')
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)

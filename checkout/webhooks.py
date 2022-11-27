@@ -29,14 +29,11 @@ def webhook(request):
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
-    print('webhooks.py: Stage one')
 
     try:
-        print('entered try block')
         event = stripe.Webhook.construct_event(
             payload, sig_header, wh_secret
         )
-        print('exiting block')
     except ValueError as e:
         # Invalid payload
         return HttpResponse(status=400)
@@ -50,32 +47,29 @@ def webhook(request):
     # Set up webhook handler by creating an instance
     # of it and passing in the request
     handler = StripeWH_Handler(request)
-    print('webhooks.py: Stage two')
 
     # Map webhook events to relevant handler
     event_map = {
-        # Bug: payment_intent.succeeded returns error 500 in Stripe:
-        # If replaced (e.g. with 'charge.succeeded': handler.handle_payment_intent_succeeded,)
-        # will then be handled by generic handler and the new event (e.g. charge.succeeded)
-        # will return error 500 instead.
+        # Bug Notes (see README):
+        # payment_intent.succeeded returns error500 in Stripe:
+        # If replaced (e.g. with 'charge.succeeded': ...) will then be handled
+        # by generic handler and the new event (e.g. charge.succeeded) will
+        # return error 500 instead.
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
     }
-    print('webhooks.py: Stage three')
+
 
     # Get the webhook type from Stripe
     event_type = event['type']
-    print('webhooks.py: Stage four')
 
     # Assign this as the value of a variable called stripe_event_handler
     # stripe_event_handler is then an alias for whichever function you get
     # from the dictionary; give it the generic 'handle_stripe_event' by default
     stripe_event_handler = event_map.get(
         event_type, handler.handle_stripe_event)
-    print('webhooks.py: Stage five')
 
     # Call the selected event handler function, passing it the event
     # received from Stripe:
     response = stripe_event_handler(event)
-    print('webhooks.py: Stage six')
     return response

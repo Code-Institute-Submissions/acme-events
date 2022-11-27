@@ -409,10 +409,10 @@ Forking a repository does not create locally-stored copies of its files on your 
 </details>  
   
 ## Known Bugs  
-At the time of writing, the site's webhooks feature is not fully operational. Once operational, this feature will allow bookings to be reconstituted from the data sent to Stripe when processing the payment, should the checkout form itself fail to submit to the site for any reason (for example, premature browser closure resulting in a charge being processed but no booking being created within the site's database). As a failsafe measure ensuring quality customer experience, the site should not ideally be deployed without resolving this issue, at least in the opinion of the developer.  
+At the time of writing, the site's webhooks feature is not fully operational. Once operational, this feature will allow bookings to be reconstituted from the data sent to Stripe when processing the payment, should the checkout form itself fail to submit to the site for any reason (for example, premature browser closure resulting in a charge being processed but no booking being created within the site's database). As a failsafe measure ensuring quality customer experience, the site should not ideally be deployed without resolving this issue, at least in the opinion of the developer. A brief note regarding the bug and its behaviour has been preserved in an affected file for future debugging and to ensure that the bug is noted by any reader browsing the code without consulting the README.  
   
 In addition, the implementation of webhooks within the site contains within it a mechanism to send post-purchase confirmation emails. At present, this feature is not operational as it is affected by the webhooks bug.  
-  
+    
 # Credits:
 - [Hero Image (anvil)](https://www.freepik.com/free-photo/close-up-photo-shoot-hammer-anvil-dark-smith-workshop_24917063.htm#query=anvil&position=1&from_view=search&track=sph) by fxquadro on Freepik.  
 - [Warner Bros logo from Wikipedia (public domain)](https://en.wikipedia.org/wiki/Warner_Bros.#/media/File:Warner_Bros._(2019)_logo.svg).  
