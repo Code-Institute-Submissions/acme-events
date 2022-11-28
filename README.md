@@ -440,4 +440,5 @@ In addition, the implementation of webhooks within the site contains within it a
   + And finally, the LCETB-Nov-21 cohort, for laughs, useful advice, positivity and shared learning, particularly:  
     - Ronan M. for laughs and always somehow managing to synchronise stressful events,  
     - Claudio C. for being eternally upbeate and positive,  
-    - Mario de S. for helping improve the user-exerience in a previous project.  
+    - Mario de S. for helping improve the user-exerience in a previous project,  
+    - as well all the cohort members who took part in stand ups whenever possible and often offered helpful advice and not a little inspiration.  
