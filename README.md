@@ -57,7 +57,7 @@ As a small business, Google Ads is not considered the first priority for Acme Ev
   + Edit event details where necessary.  
   + Delete events if cancelled before their start date.  
   + Rely on automated processes within the site to display only those events that have not already passed (ie. expired events will not be presented to the public).  
-  + Take bookings (sell tickets) online with ease and a minimum investment of time.  
+  + Take bookings online with ease and a minimum investment of time.  
   + Link to and promote venues hosting these events to promote good relations between organiser and venue.  
   + Provide contact information for venues to reduce queries from users that would be more appropriately directed to the venue than the event organiser.  
   + Build a client contact database directly from my website using the integrated newsletter sign-up form.  
@@ -410,6 +410,8 @@ Forking a repository does not create locally-stored copies of its files on your 
   
 ## Known Bugs  
 At the time of writing, the site's webhooks feature is not fully operational. Once operational, this feature will allow bookings to be reconstituted from the data sent to Stripe when processing the payment, should the checkout form itself fail to submit to the site for any reason (for example, premature browser closure resulting in a charge being processed but no booking being created within the site's database). As a failsafe measure ensuring quality customer experience, the site should not ideally be deployed without resolving this issue, at least in the opinion of the developer. A brief note regarding the bug and its behaviour has been preserved in an affected file for future debugging and to ensure that the bug is noted by any reader browsing the code without consulting the README.  
+  
+At the time of writing, this bug is also documented as an outstanding issue in [the project's GitHub issues](https://github.com/OwenDa/acme-events/issues/36).  
   
 In addition, the implementation of webhooks within the site contains within it a mechanism to send post-purchase confirmation emails. At present, this feature is not operational as it is affected by the webhooks bug.  
     

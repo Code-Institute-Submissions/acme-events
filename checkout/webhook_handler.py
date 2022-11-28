@@ -42,7 +42,7 @@ class StripeWH_Handler:
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-        """ Handle payment intent succeeded webhooks from Stripe """
+        """ Handle payment_intent.succeeded webhooks from Stripe """
         intent = event.data.object
         pid = intent.id
         cart = intent.metadata.cart
