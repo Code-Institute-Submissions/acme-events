@@ -437,4 +437,7 @@ In addition, the implementation of webhooks within the site contains within it a
   + The team of people who helped students through a tricky time when Heroku announced changes to their structure and technical changes were needed to preserve past and present work,  
   + The [Limerick & Clare Education & Training Board](https://lcetb.ie/),  
   + Code Institute's instructors and content creators, as well as those working more behind-the-scenes to make the course possible and keep it relevant, including all that thankless admin!  
-  + And finally, the LCETB-Nov-21 cohort, for laughs, useful advice, positivity and shared learning.  
+  + And finally, the LCETB-Nov-21 cohort, for laughs, useful advice, positivity and shared learning, particularly:  
+    - Ronan M. for laughs and always somehow managing to synchronise stressful events,  
+    - Claudio C. for being eternally upbeate and positive,  
+    - Mario de S. for helping improve the user-exerience in a previous project.  
